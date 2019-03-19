@@ -15,4 +15,4 @@
 ### Added
  - Both Max and Shawn tested our solenoid system on the elevator in Atlas, and all the components work with one another, but the solenoids just are not powerful enough to actually press the elevator buttons!
  - Shawn uploaded all relevant code files to GitHub and created this changelog file.
- - Both Max and Shawn recorded this progress update video: (TDB)
+ - Both Max and Shawn recorded this progress update video: https://youtu.be/D2E1a5-l_-8
