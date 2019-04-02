@@ -6,7 +6,10 @@ import processing.io.*;
 //Define global variables
 OscP5 oscP5;
 NetAddress myRemoteLocation;
-
+final Integer UP = 1;
+final Integer DOWN = 2;
+Integer lastReceivedWand = 0;
+Integer lastReceivedVoice = 0;
 
 public void settings() {
     size(100, 100); // Note, this is just a blank window that can be closed without consequence 
@@ -25,33 +28,72 @@ void setup() {
 }
 
 
-// Recieve OSC messages from Wekinator
+/**
+ * Recieve OSC messages from Wekinator
+ */
 void oscEvent(OscMessage theOscMessage) {
     if (theOscMessage.checkAddrPattern("/output_1") == true) {
-        println("/output_1 recieved.");
-        activateSolenoid("UP");
+        println("UP wand gesture recieved.");
+        lastReceivedWand = UP;
+        if (shouldCallElevator()) activateSolenoid(UP);
     }
     else if (theOscMessage.checkAddrPattern("/output_2") == true) {
-        println("/output_2 recieved.");
-        activateSolenoid("DOWN");
+        println("DOWN wand gesture recieved.");
+        lastReceivedWand = DOWN;
+        if (shouldCallElevator()) activateSolenoid(DOWN);
     }
-    else if (theOscMessage.checkAddrPattern("/output_3") == true) {
-        // no-op
+    else if (theOscMessage.checkAddrPattern("/up_voice") == true) {
+        println("UP voice command recieved.");
+        lastReceivedVoice = UP;
+        if (shouldCallElevator()) activateSolenoid(UP);
+    }
+    else if (theOscMessage.checkAddrPattern("/down_voice") == true) {
+        println("DOWN voice command recieved.");
+        lastReceivedVoice = DOWN;
+        if (shouldCallElevator()) activateSolenoid(DOWN);
+    }
+}
+
+/**
+ * Check and manipulate global variables for wand and voice inputs
+ * and return true when the wand and voice inputs match.
+ */
+Boolean shouldCallElevator() {
+    if (lastReceivedWand == UP && lastReceivedVoice == UP) {
+        lastReceivedWand = 0;
+        lastReceivedVoice = 0;
+        return true;
+    } else if (lastReceivedWand == DOWN && lastReceivedVoice == DOWN) {
+        lastReceivedWand = 0;
+        lastReceivedVoice = 0;
+        return true;
+    } else if (lastReceivedWand == DOWN && lastReceivedVoice == UP) {
+        lastReceivedWand = 0;
+        lastReceivedVoice = 0;
+        return false;
+    } else if (lastReceivedWand == UP && lastReceivedVoice == DOWN) {
+        lastReceivedWand = 0;
+        lastReceivedVoice = 0;
+        return false;
+    } else {
+        return false; 
     }
 }
 
 
-// Activate a solenoid based on which spell was cast
-void activateSolenoid(String spell) {
+/**
+ * Activate a solenoid based on which spell was cast
+ */
+void activateSolenoid(Integer spell) {
     // Making the led HIGH or LOW depending on the output from the wekinator
-    if (spell.equals("UP")) {
+    if (spell == UP) {
         GPIO.digitalWrite(20, GPIO.LOW);
         delay(1000);
         GPIO.digitalWrite(20, GPIO.HIGH);
         delay(1000); 
         println("Elevator is called going up.\n");  
     }
-    else if (spell.equals("DOWN")) {
+    else if (spell == DOWN) {
         GPIO.digitalWrite(26, GPIO.LOW);
         delay(1000);
         GPIO.digitalWrite(26, GPIO.HIGH);
