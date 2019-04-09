@@ -11,9 +11,9 @@ while(True):
 
         try:
             text = r.recognize_google(audio)
-            if (text == 'elevator go up' or text == 'go up'):
+            if ('elevator go up' in text or 'go up' in text):
             	client.send_message("/up_voice", 1 )
-            elif (text == 'elevator go down' or text == 'go down'):
+            elif ('elevator go down' in text or 'go down' in text):
             	client.send_message("/down_voice", 2 )
             
             print('You said:  {}'.format(text))
