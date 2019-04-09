@@ -27,3 +27,5 @@
 ## [0.0.5] – 2019-04-09
 ### Added
  - Shawn altered the voice-to-text script to send OSC messages when key spell phrases are in the returned text, as opposed to the returned text matching the phrases exactly
+ - Max built a linear actuator out of LEGO parts that is finally powerful enough to press elevator buttons
+ - Both Shawn and Max recorded this progress update video: https://youtu.be/d8HVFMx6nRo
