@@ -23,3 +23,7 @@
  - Max researched alternatives to the previously tested solenoids. Other customers of that solenoid type also reported that the solenoid only produces about half the force than stated in the datasheet. Alternatives are A: stronger solenoids B: electric linear motor or C: a pneumatic system. The specifications of each option can be found in the proposal document. All options drive costs and complexity of the system while reducing the mobility.
  - Both Shawn and Max will discuss hacking options with facility management on 04/04/2019.
  - Shawn recorded this progress update video: https://youtu.be/4teWFxSjB8g
+
+## [0.0.5] – 2019-04-09
+### Added
+ - Shawn altered the voice-to-text script to send OSC messages when key spell phrases are in the returned text, as opposed to the returned text matching the phrases exactly
