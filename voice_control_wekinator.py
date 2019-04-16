@@ -13,9 +13,9 @@ while(True):
         try:
             text = r.recognize_google(audio)
             if ('start running' in text ):
-            	client.send_message("/wekinator/control/startRunning", 0 )
+                client.send_message("/wekinator/control/startRunning", 0 )
             elif ('stop running' in text):
-            	client.send_message("/wekinator/control/stopRunning", 0 )
+                client.send_message("/wekinator/control/stopRunning", 0 )
             elif ('start recording up' in text):
                 client.send_message("/wekinator/control/startDtwRecording", 1 )
                 time.sleep(2)  # record for exactly 2 seconds
@@ -30,6 +30,7 @@ while(True):
                 client.send_message("/wekinator/control/stopDtwRecording", 0 )
             # elif ('stop recording' in text):
             #     client.send_message("/wekinator/control/stopDtwRecording", 0 )
+            # TODO: "deleteExamplesForOutput" (with 1, 2, or 3) to support deleting bad DTW recordings
 
             
             print('You said:  {}'.format(text))
