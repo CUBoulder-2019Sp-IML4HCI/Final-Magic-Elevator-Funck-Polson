@@ -29,3 +29,7 @@
  - Shawn altered the voice-to-text script to send OSC messages when key spell phrases are in the returned text, as opposed to the returned text matching the phrases exactly
  - Max built a linear actuator out of LEGO parts that is finally powerful enough to press elevator buttons
  - Both Shawn and Max recorded this progress update video: https://youtu.be/d8HVFMx6nRo
+ 
+ ## [0.0.6] – 2019-04-16
+### Added
+ - Shawn added a Python script that controls Wekinator with voice commands. Specifically, it can control starting/stopping running and recording DTW examples.
