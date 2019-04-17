@@ -2,7 +2,8 @@ import speech_recognition as sr
 from pythonosc import udp_client
 
 r = sr.Recognizer()
-client = udp_client.SimpleUDPClient("localhost", 12000)
+ip = "192.168.195.28"  # zerotier IP of raspberry pi
+client = udp_client.SimpleUDPClient(ip, 12000)
 
 while(True):
     with sr.Microphone() as source:
