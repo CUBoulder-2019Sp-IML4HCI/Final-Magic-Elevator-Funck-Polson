@@ -5,7 +5,7 @@ import processing.io.*;
 
 //Define global variables
 OscP5 oscP5;
-NetAddress myRemoteLocation;
+NetAddress legoMotorServer;
 final Integer UP = 1;
 final Integer DOWN = 2;
 Integer lastReceivedWand = 0;
@@ -17,10 +17,7 @@ public void settings() {
 
 
 void setup() {
-    GPIO.pinMode(26, GPIO.OUTPUT);
-    GPIO.pinMode(20, GPIO.OUTPUT);
-    GPIO.digitalWrite(26, GPIO.HIGH);
-    GPIO.digitalWrite(20, GPIO.HIGH);
+    legoMotorServer = new NetAddress("127.0.0.1", 12001); //the IP and port that the motor server is listening on
   
     frameRate(0.01);
     /* start oscP5, listening for incoming messages at port 12000 */
@@ -85,19 +82,18 @@ Boolean shouldCallElevator() {
  * Activate a solenoid based on which spell was cast
  */
 void activateSolenoid(Integer spell) {
-    // Making the led HIGH or LOW depending on the output from the wekinator
     if (spell == UP) {
-        GPIO.digitalWrite(20, GPIO.LOW);
-        delay(1000);
-        GPIO.digitalWrite(20, GPIO.HIGH);
-        delay(1000); 
+        OscMessage upMessage = new OscMessage("/elevator/up");
+        upMessage.add(0); //add random data to the osc message
+        oscP5.send(upMessage, legoMotorServer);
+        
         println("Elevator is called going up.\n");  
     }
     else if (spell == DOWN) {
-        GPIO.digitalWrite(26, GPIO.LOW);
-        delay(1000);
-        GPIO.digitalWrite(26, GPIO.HIGH);
-        delay(1000);
+        OscMessage downMessage = new OscMessage("/elevator/down");
+        downMessage.add(0); //add random data to the osc message
+        oscP5.send(downMessage, legoMotorServer);
+        
         println("Elevator is called going down.\n");
     }
     else {
