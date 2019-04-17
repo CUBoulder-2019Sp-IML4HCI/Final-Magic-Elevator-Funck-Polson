@@ -33,3 +33,5 @@
  ## [0.0.6] – 2019-04-16
 ### Added
  - Shawn added a Python script that controls Wekinator with voice commands. Specifically, it can control starting/stopping running and recording DTW examples.
+ - Max laser cut acrylic sheets for our hardware 
+ - Shawn got the previous software working with the new LEGO hardware
