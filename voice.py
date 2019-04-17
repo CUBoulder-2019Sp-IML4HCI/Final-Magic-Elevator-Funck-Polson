@@ -18,7 +18,7 @@ while(True):
             	client.send_message("/down_voice", 2 )
             
             print('You said:  {}'.format(text))
+            print('')
         except Exception as e:
-            print(e)
-            print('Sorry, could not recognize your voice!')
+            print('Sorry, could not hear/recognize your voice.')
             
