@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<OSCInputGroup>
+  <oscMessage>/wand_accel</oscMessage>
+  <numInputs>3</numInputs>
+  <groupName>Inputs</groupName>
+  <inputNames>
+    <string>wand_accel-1</string>
+    <string>wand_accel-2</string>
+    <string>wand_accel-3</string>
+  </inputNames>
+</OSCInputGroup>
