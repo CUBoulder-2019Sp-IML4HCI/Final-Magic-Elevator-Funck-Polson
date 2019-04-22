@@ -8,24 +8,37 @@ NetAddress wekiDest;
 NetAddress selfDest;
 
 //Variables for displaying on-screen text 
-PFont myFont, myBigFont;
+PFont labelFont, buttonFont, headerFont, trainingFont;
 int frameNum = 0;
 int r = 150; //red component of background color
 int g = 200; //green component of background color
 int b = 200; //blue component of background color
 int currentTextHue = 0;
-String currentMessage = "Waiting...";
+String currentMessage = "The Magic Elevator";
 
 //Variables for train buttons
+//up gesture
 float x1 = 100;
-float y1 = 700;
-float w1 = 250;
+float y1 = 400;
+float w1 = 275;
 float h1 = 90;
-
-float x2 = 400;
-float y2 = 700;
-float w2 = 350;
+//down gesture
+float x2 = 100;
+float y2 = 650;
+float w2 = 275;
 float h2 = 90;
+//up incantation
+String upIncantation = "floors above";
+float x3 = x1+w1+15;
+float y3 = y1+(h1/2);
+float w3 = 275;
+float h3 = h1/2;
+//down incantation
+String downIncantation = "floors below";
+float x4 = x2+w2+15;
+float y4 = y2+(h2/2);
+float w4 = 275;
+float h4 = h2/2;
 
 //prevent multiple button clicks at once, preventing repeating training cycles
 Boolean buttonWasClicked = false;
@@ -44,8 +57,10 @@ void setup() {
     selfDest = new NetAddress("127.0.0.1",12000); //send messages back to this program
     
     //Set up fonts
-    myFont = createFont("Arial", 14);
-    myBigFont = createFont("Arial", 60);
+    labelFont = createFont("Arial", 30);
+    buttonFont = createFont("Arial", 45);
+    headerFont = createFont("Arial", 50);
+    trainingFont = createFont("Arial", 60);
 }
 
 void draw() {
@@ -53,40 +68,91 @@ void draw() {
     background(r, g, b);
     drawText();
     
-    //"Train UP" Button
-    if (!buttonWasClicked ) { //don't show button during training
+    //Buttons and labels
+    if (!buttonWasClicked) { //don't show buttons during training
+        //"UP Spell" header
+        textFont(headerFont);
+        text("UP Spell", 20, y1-80);
+    
+        //"Train UP" Button
         rect(x1,y1,w1,h1);
         fill(220);
-        text("Train UP", 105, 710);
+        textFont(buttonFont);
+        text("Train Wand", x1+18, y1+20);
         if(mousePressed) {
             if(mouseX>x1 && mouseX <x1+w1 && mouseY>y1 && mouseY <y1+h1) {
                 buttonWasClicked = true;
-                println("UP button clicked.");
+                println("UP wand button clicked.");
                 OscMessage msg = new OscMessage("/startTrainingUp");    
                 oscP5.send(msg, selfDest);
             }  
         } 
-    }
+        
+        //UP incantation label
+        fill(0);
+        textFont(labelFont);
+        text("Incantation: \"" + upIncantation + "\"", x1+w1+15, y1);
+        
+        //UP incantation button
+        fill(0);
+        rect(x3,y3,w3,h3);
+        fill(220);
+        textFont(labelFont);
+        text("Change Incantation", x3+5, y3+2);
+        if(mousePressed) {
+            if(mouseX>x3 && mouseX <x3+w3 && mouseY>y3 && mouseY <y3+h3) {
+                buttonWasClicked = true;
+                println("UP incantation button clicked.");
+                OscMessage msg = new OscMessage("/changeIncantationUp");    
+                oscP5.send(msg, selfDest); 
+            }  
+        }
+        
+        
+        //"DOWN Spell" Header
+        fill(0);
+        textFont(headerFont);
+        text("DOWN Spell", 20, y2-80);
     
-    //"Train DOWN" Button
-    if (!buttonWasClicked) { //don't show button during training
+        //"Train DOWN" Button
         fill(0);
         rect(x2,y2,w2,h2);
         fill(220);
-        text("Train DOWN", 405, 710);
+        textFont(buttonFont);
+        text("Train Wand", x2+18, y2+20);
         if(mousePressed) {
             if(mouseX>x2 && mouseX <x2+w2 && mouseY>y2 && mouseY <y2+h2) {
                 buttonWasClicked = true;
-                println("DOWN button clicked.");
+                println("DOWN wand button clicked.");
                 OscMessage msg = new OscMessage("/startTrainingDown");    
                 oscP5.send(msg, selfDest); 
             }  
-        }  
+        }
+        
+        //DOWN incantation label
+        fill(0);
+        textFont(labelFont);
+        text("Incantation: \"" + downIncantation + "\"", x2+w2+15, y2);
+        
+        //DOWN incantation button
+        fill(0);
+        rect(x4,y4,w4,h4);
+        fill(220);
+        textFont(labelFont);
+        text("Change Incantation", x4+5, y4+2);
+        if(mousePressed) {
+            if(mouseX>x4 && mouseX <x4+w4 && mouseY>y4 && mouseY <y4+h4) {
+                buttonWasClicked = true;
+                println("DOWN incantation button clicked.");
+                OscMessage msg = new OscMessage("/changeIncantationDown");    
+                oscP5.send(msg, selfDest); 
+            }  
+        }
     }
 }
 
 /**
- * This is the main logic for this whole program
+ * This is the main logic for training new wand gestures
  */ 
 void startTraining(String spell) {
     if (spell.equals("UP") || spell.equals("DOWN")) { //assert spell must be "UP" or "DOWN"
@@ -149,6 +215,19 @@ void startTraining(String spell) {
     }
 }
 
+/**
+ * This is the logic for changing the incantation (vocal component) of the spells
+ */ 
+void changeIncantation(String spell) {
+    if (spell.equals("UP") || spell.equals("DOWN")) { //assert spell must be "UP" or "DOWN"
+        String oldMessage = currentMessage;
+        currentMessage = "Change " + spell + " incantation.";
+        delay(3000);
+        currentMessage = oldMessage;
+        buttonWasClicked = false;
+    }
+}
+
 //------Helper Methods-------------------------------------------------------
 
 /**
@@ -156,12 +235,20 @@ void startTraining(String spell) {
  */
 void oscEvent(OscMessage theOscMessage) {
   if (theOscMessage.checkAddrPattern("/startTrainingUp") == true) {
-      println("Starting training UP.");
+      println("Starting training wand UP.");
       startTraining("UP");
   }
   else if (theOscMessage.checkAddrPattern("/startTrainingDown") == true) {
-      println("Starting training DOWN.");
+      println("Starting training wand DOWN.");
       startTraining("DOWN");
+  }
+  else if (theOscMessage.checkAddrPattern("/changeIncantationUp") == true) {
+      println("Changing voice for UP.");
+      changeIncantation("UP");
+  }
+  else if (theOscMessage.checkAddrPattern("/changeIncantationDown") == true) {
+      println("Changing voice for DOWN.");
+      changeIncantation("DOWN");
   }
 }
 
@@ -207,10 +294,9 @@ void changeBackgroundColor(int red, int green, int blue) {
 //Write instructions (i.e. currentMessage) to the screen.
 void drawText() {  
     stroke(0);
-    textFont(myFont);
     textAlign(LEFT, TOP); 
     fill(currentTextHue, 0, 0);
     
-    textFont(myBigFont);
+    textFont(trainingFont);
     text(currentMessage, 20, 180);
 }
