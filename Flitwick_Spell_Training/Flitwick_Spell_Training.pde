@@ -27,9 +27,8 @@ float y2 = 700;
 float w2 = 350;
 float h2 = 90;
 
-//small hack to prevent multiple button clicks at once, preventing repeating training cycles
-Boolean trainUpWasClicked = false;
-Boolean trainDownWasClicked = false;
+//prevent multiple button clicks at once, preventing repeating training cycles
+Boolean buttonWasClicked = false;
 
 
 
@@ -55,35 +54,35 @@ void draw() {
     drawText();
     
     //"Train UP" Button
-    rect(x1,y1,w1,h1);
-    fill(220);
-    text("Train UP", 105, 710);
-    if(mousePressed) {
-        if(mouseX>x1 && mouseX <x1+w1 && mouseY>y1 && mouseY <y1+h1) {
-            if (!trainUpWasClicked) {
-                trainUpWasClicked = true;
+    if (!buttonWasClicked ) { //don't show button during training
+        rect(x1,y1,w1,h1);
+        fill(220);
+        text("Train UP", 105, 710);
+        if(mousePressed) {
+            if(mouseX>x1 && mouseX <x1+w1 && mouseY>y1 && mouseY <y1+h1) {
+                buttonWasClicked = true;
                 println("UP button clicked.");
                 OscMessage msg = new OscMessage("/startTrainingUp");    
                 oscP5.send(msg, selfDest);
-            }
-        }  
-    } 
+            }  
+        } 
+    }
     
     //"Train DOWN" Button
-    fill(0);
-    rect(x2,y2,w2,h2);
-    fill(220);
-    text("Train DOWN", 405, 710);
-    if(mousePressed) {
-        if(mouseX>x2 && mouseX <x2+w2 && mouseY>y2 && mouseY <y2+h2) {
-            if (!trainDownWasClicked) {
-                trainDownWasClicked = true;
+    if (!buttonWasClicked) { //don't show button during training
+        fill(0);
+        rect(x2,y2,w2,h2);
+        fill(220);
+        text("Train DOWN", 405, 710);
+        if(mousePressed) {
+            if(mouseX>x2 && mouseX <x2+w2 && mouseY>y2 && mouseY <y2+h2) {
+                buttonWasClicked = true;
                 println("DOWN button clicked.");
                 OscMessage msg = new OscMessage("/startTrainingDown");    
-                oscP5.send(msg, selfDest);
-            }
+                oscP5.send(msg, selfDest); 
+            }  
         }  
-    }     
+    }
 }
 
 /**
@@ -146,8 +145,7 @@ void startTraining(String spell) {
         startRunning();
         
         //Allow the training button to be clicked again now that this cycle ended
-        if (spell.equals("UP"))        trainUpWasClicked = false;
-        else if (spell.equals("DOWN")) trainDownWasClicked = false;
+        buttonWasClicked = false;
     }
 }
 
@@ -216,4 +214,3 @@ void drawText() {
     textFont(myBigFont);
     text(currentMessage, 20, 180);
 }
-
