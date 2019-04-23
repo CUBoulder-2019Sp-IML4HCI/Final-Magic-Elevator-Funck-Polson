@@ -52,6 +52,8 @@ Boolean showButtons = true;
 PImage mainBackground;
 PImage flitwick1;
 PImage flitwick2;
+PImage flitwickGreen;
+PImage flitwickRed;
 PImage currentBackground;
 
 
@@ -83,6 +85,8 @@ void setup() {
     mainBackground = loadImage("magicLifts.jpg");
     flitwick1 = loadImage("flitwickBlackBottom.jpg");
     flitwick2 = loadImage("flitwickWandBlackBottom.jpg");
+    flitwickGreen = loadImage("flitwickWandGreen.jpg");
+    flitwickRed = loadImage("flitwickWandRed.jpg");
     currentBackground = mainBackground;
 }
 
@@ -268,14 +272,14 @@ void startTraining(String spell) {
         
         //Prompt the user to record their 10 new gesture training examples
         for (int i = 1; i <= 10; i++) { 
-            changeBackgroundColor(45,237,205); //green
+            currentBackground = flitwickGreen;
             if (i == 1) currentMessage = "GO!\nSTART MOTION (" + i + ")";
             else currentMessage = "\nSTART MOTION (" + i + ")";
             startDtwRecording(spell);
             
             delay(1500); //record for exactly 1.5 seconds
             
-            changeBackgroundColor(237,45,93); //red
+            currentBackground = flitwickRed;
             currentMessage = "\nSTOP";
             stopDtwRecording();
             delay(2000);
