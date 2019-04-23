@@ -56,6 +56,10 @@ PImage flitwickGreen;
 PImage flitwickRed;
 PImage currentBackground;
 
+//Variables for sound
+Minim minim;
+AudioPlayer harryPotterSong;
+
 
 void setup() {
     size(1000,800, P3D);
@@ -88,6 +92,10 @@ void setup() {
     flitwickGreen = loadImage("flitwickWandGreen.jpg");
     flitwickRed = loadImage("flitwickWandRed.jpg");
     currentBackground = mainBackground;
+    
+    //Initialize Harry Potter song
+    minim = new Minim(this);
+    harryPotterSong = minim.loadFile("Harry Potter Theme Song.mp3");
 }
 
 void draw() {
@@ -185,6 +193,7 @@ void draw() {
  */ 
 void startTraining(String spell) {
     if (spell.equals("UP") || spell.equals("DOWN")) { //assert spell must be "UP" or "DOWN"
+        harryPotterSong.play(); //Play
         currentBackground = flitwick1;
         String origMessage = currentMessage;
         
@@ -289,12 +298,14 @@ void startTraining(String spell) {
         currentBackground = flitwick1;
         textY = 675;
         currentMessage = "Great spell casting!\nNow try out your new wand motion, why don't you?";
-        delay(4000);
+        delay(6000);
         
         //Set things back for the main screen
         currentBackground = mainBackground;
         currentMessage = origMessage;
         startRunning();
+        harryPotterSong.pause();
+        harryPotterSong.rewind();
         
         //Allow the training buttons to be clicked again now that this cycle ended
         showButtons = true;
