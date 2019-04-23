@@ -39,40 +39,39 @@ In the magic elevator a number of hardware pieces are communicating with each ot
 
 ## Built in Technologies:
 ### Hardware:
-Raspberry Pi 3
-BrickPi 3
-Lego Mindstorm Motor + Miscellaneous
-Micro Bits
-Elevator Mount
-Harry Potter Wand 
+- Raspberry Pi 3
+- BrickPi 3
+- Lego Mindstorm Motor + Miscellaneous
+- Micro Bits
+- Elevator Mount
+- Harry Potter Wand 
 
 ### Software Languages:
-Processing
-Python 3
-Microbit.hex code
+- Processing
+- Python 3
+- Microbit.hex code
 
 ### Processing Libraries
-oscP5
-netP5
-processing.io
+- oscP5
+- netP5
+- processing.io
 
 ### Python Libraries:
-serial
-pythonosc
-argparse
-sys
-time
-brickpi3
+- serial
+- pythonosc
+- argparse
+- sys
+- time
+- brickpi3
 
 ## Model Architecture:
 
-The model architecture is depicted in the scheme below
+The model architecture is depicted in the following scheme:
 
-Multiplayer?
-Timeline?
-Risk to Failure?
+![MagicElevatorLogic](https://user-images.githubusercontent.com/46902147/56620647-e0ce2300-65e6-11e9-8ce8-cb1b66ab1afc.png)
 
-Risk to Failure:
+
+## Risk to Failure:
 
 
 
