@@ -345,5 +345,5 @@ void drawText() {
     fill(textR, textG, textB);
     
     textFont(trainingFont);
-    text(currentMessage, 20, 100);
+    text(currentMessage, 20, 110);
 }
