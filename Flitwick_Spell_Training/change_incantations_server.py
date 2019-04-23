@@ -64,9 +64,6 @@ class IncantationChanger:
   
     
 if __name__ == "__main__":
-    
-    # r = sr.Recognizer()
-    # client = udp_client.SimpleUDPClient("192.168.195.28", 12000) # zerotier IP of raspberry pi
 
     changer = IncantationChanger() 
 
