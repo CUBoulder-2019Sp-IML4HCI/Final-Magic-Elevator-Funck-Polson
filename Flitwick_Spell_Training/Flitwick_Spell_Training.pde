@@ -9,7 +9,7 @@ NetAddress selfDest;
 NetAddress voiceDest;
 
 //Variables for displaying on-screen text 
-PFont labelFont, buttonFont, headerFont, trainingFont;
+PFont labelFont, buttonFont, headerFont, titleFont, trainingFont;
 int frameNum = 0;
 int r = 150; //red component of background color
 int g = 200; //green component of background color
@@ -18,6 +18,8 @@ int textR = 255;
 int textG = 255;
 int textB = 255;
 String currentMessage = "The Magic Elevator";
+int textX = 30;
+int textY = 700;
 
 //Variables for train buttons
 //up gesture
@@ -48,13 +50,15 @@ Boolean showButtons = true;
 
 //Variables for background images
 PImage mainBackground;
+PImage flitwick1;
+PImage flitwick2;
 PImage currentBackground;
 
 
 void setup() {
     size(1000,800, P3D);
     colorMode(RGB);
-    background(r,g,b);
+    background(25,25,25);
     smooth();
     
     
@@ -68,7 +72,8 @@ void setup() {
     labelFont = createFont("4 Privet Drive", 27);
     buttonFont = createFont("4 Privet Drive", 40);
     headerFont = createFont("LumosLatino", 50);
-    trainingFont = createFont("Harry Potter", 60);
+    titleFont = createFont("Harry Potter", 60);
+    trainingFont = createFont("4 Privet Drive", 35);
     
     //Initialize incantations from files
     upIncantation = loadStrings("up.txt")[0].trim();
@@ -76,6 +81,8 @@ void setup() {
     
     //Initialize background images
     mainBackground = loadImage("magicLifts.jpg");
+    flitwick1 = loadImage("flitwickBlackBottom.jpg");
+    flitwick2 = loadImage("flitwickWandBlackBottom.jpg");
     currentBackground = mainBackground;
 }
 
@@ -174,64 +181,118 @@ void draw() {
  */ 
 void startTraining(String spell) {
     if (spell.equals("UP") || spell.equals("DOWN")) { //assert spell must be "UP" or "DOWN"
+        currentBackground = flitwick1;
         String origMessage = currentMessage;
         
-        //Tell user they're training a new gesture
-        currentMessage = "Okay! Let's train a new \nwand gesture for " + spell + ".";
-        delay(5000);
-        currentMessage = "I will erase the current gesture \nin one moment...";
-        delay(3000);
+        //Introduce Flitwick and tell user they're training a new wand motion
+        textX = 30;
+        textY = 700;
+        currentMessage = "Greetings, I am Filius Flitwick, your Charms professor!";
+        delay(2000);
+        currentMessage = "Greetings, I am Filius Flitwick, your Charms professor!\n...";
+        delay(1000);
+        currentMessage = "Greetings, I am Filius Flitwick, your Charms professor!\n..";
+        delay(1000);
+        currentMessage = "Greetings, I am Filius Flitwick, your Charms professor!\n.";
+        delay(1000);
+        currentMessage = "Greetings, I am Filius Flitwick, your Charms professor!";
+        int origTextX = textX;
+        textX = spell.equals("DOWN") ? 20 : textX; //"DOWN" almost puts text off-screen, so adjust
+        currentMessage = "Let's learn a new wand motion for " + spell + ", shall we?";
+        delay(2000);
+        currentMessage = "Let's learn a new wand motion for " + spell + ", shall we?\n...";
+        delay(1000);
+        currentMessage = "Let's learn a new wand motion for " + spell + ", shall we?\n..";
+        delay(1000);
+        currentMessage = "Let's learn a new wand motion for " + spell + ", shall we?\n.";
+        delay(1000);
+        currentMessage = "Let's learn a new wand motion for " + spell + ", shall we?";
         
         //Clear examples for UP or DOWN depending on spell
+        textX = origTextX; //move text back if we moved it
         deleteAllExamples(spell);
-        changeBackgroundColor(140, 150, 160); //grey
-        currentMessage = "Erased!\nNow let's train that new gesture.";
-        delay(3000);
+        currentMessage = "You decide what that motion will be.";
+        delay(500);
+        currentMessage = "You decide what that motion will be.\n...";
+        delay(1000);
+        currentMessage = "You decide what that motion will be.\n..";
+        delay(1000);
+        currentMessage = "You decide what that motion will be.\n.";
+        delay(1000);
+        currentMessage = "You decide what that motion will be.";
         
         //Prepare the user for the upcoming 10 training cycles
         currentMessage = "Get your wand ready.";
         delay(3000);
-        currentMessage = "I'll count down from 5,\nand once I say 'GO!'\nI'll have you perform the gesture \n10 times.\nYou'll have about a second each time.";
-        delay(8000);
+        currentMessage = "Get your wand ready.\n...";
+        delay(1000);
+        currentMessage = "Get your wand ready.\n..";
+        delay(1000);
+        currentMessage = "Get your wand ready.\n.";
+        delay(1000);
+        currentMessage = "Get your wand ready.";
+
+        currentBackground = flitwick2;
+        textY = 570;
+        currentMessage = "I'll count down from 5, and once I say 'GO!'\nI'll have you perform your motion 10 times.\n\nYou will have about a second each time.";
+        delay(4000);
+        currentMessage = "I'll count down from 5, and once I say 'GO!'\nI'll have you perform your motion 10 times.\n\nYou will have about a second each time.\t......";
+        delay(1000);
+        currentMessage = "I'll count down from 5, and once I say 'GO!'\nI'll have you perform your motion 10 times.\n\nYou will have about a second each time.\t.....";
+        delay(1000);
+        currentMessage = "I'll count down from 5, and once I say 'GO!'\nI'll have you perform your motion 10 times.\n\nYou will have about a second each time.\t....";
+        delay(1000);
+        currentMessage = "I'll count down from 5, and once I say 'GO!'\nI'll have you perform your motion 10 times.\n\nYou will have about a second each time.\t...";
+        delay(1000);
+        currentMessage = "I'll count down from 5, and once I say 'GO!'\nI'll have you perform your motion 10 times.\n\nYou will have about a second each time.\t..";
+        delay(1000);
+        currentMessage = "I'll count down from 5, and once I say 'GO!'\nI'll have you perform your motion 10 times.\n\nYou will have about a second each time.\t.";
+        delay(1000);
+        currentMessage = "I'll count down from 5, and once I say 'GO!'\nI'll have you perform your motion 10 times.\n\nYou will have about a second each time.";
+        
         currentMessage = "Ready?";
         delay(3000);
     
         //Count down from 5...
         changeBackgroundColor(110, 195, 220);
-        currentMessage = "5...";
+        currentMessage = "Ready?\n\n5...";
         delay(1000);
-        currentMessage = "4...";
+        currentMessage = "Ready?\n\n5... 4...";
         delay(1000);
-        currentMessage = "3...";
+        currentMessage = "Ready?\n\n5... 4... 3...";
         delay(1000);
-        currentMessage = "2...";
+        currentMessage = "Ready?\n\n5... 4... 3... 2...";
         delay(1000);
-        currentMessage = "1...";
+        currentMessage = "Ready?\n\n5... 4... 3... 2... 1...";
         delay(1000);
         
         //Prompt the user to record their 10 new gesture training examples
         for (int i = 1; i <= 10; i++) { 
             changeBackgroundColor(45,237,205); //green
-            if (i == 1) currentMessage = "GO!\nSTART GESTURE (" + i + ")";
-            else currentMessage = "START GESTURE (" + i + ")";
+            if (i == 1) currentMessage = "GO!\nSTART MOTION (" + i + ")";
+            else currentMessage = "\nSTART MOTION (" + i + ")";
             startDtwRecording(spell);
             
             delay(1500); //record for exactly 1.5 seconds
             
             changeBackgroundColor(237,45,93); //red
-            currentMessage = "STOP GESTURE";
+            currentMessage = "\nSTOP";
             stopDtwRecording();
             delay(2000);
         }
         
         //Congratulate the user and run Wekinator with their new gesture
-        changeBackgroundColor(150,200,200);
-        currentMessage = "Great spell casting!\nNow try out your new gesture.";
-        delay(3000);
+        currentBackground = flitwick1;
+        textY = 675;
+        currentMessage = "Great spell casting!\nNow try out your new wand motion, why don't you?";
+        delay(4000);
+        
+        //Set things back for the main screen
+        currentBackground = mainBackground;
         currentMessage = origMessage;
         startRunning();
         
-        //Allow the training button to be clicked again now that this cycle ended
+        //Allow the training buttons to be clicked again now that this cycle ended
         showButtons = true;
     }
 }
@@ -339,11 +400,19 @@ void changeBackgroundColor(int red, int green, int blue) {
 }
 
 //Write instructions (i.e. currentMessage) to the screen.
-void drawText() {  
-    stroke(0);
-    textAlign(LEFT, TOP); 
-    fill(textR, textG, textB);
-    
-    textFont(trainingFont);
-    text(currentMessage, 20, 110);
+void drawText() {
+    if (showButtons) { //Text on main screen
+        stroke(0);
+        textAlign(LEFT, TOP); 
+        fill(textR, textG, textB);
+        
+        textFont(titleFont);
+        text(currentMessage, 20, 110);
+    } else { //Text during training
+          textAlign(LEFT, TOP); 
+          fill(textR, textG, textB);
+          
+          textFont(trainingFont);
+          text(currentMessage, textX, textY);
+    }
 }
