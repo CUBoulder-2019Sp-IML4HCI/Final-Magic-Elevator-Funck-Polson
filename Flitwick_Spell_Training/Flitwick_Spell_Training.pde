@@ -50,6 +50,7 @@ Boolean showButtons = true;
 
 //Variables for background images
 PImage mainBackground;
+PImage mainBackgroundBlurred;
 PImage flitwick1;
 PImage flitwick2;
 PImage flitwickGreen;
@@ -87,6 +88,7 @@ void setup() {
     
     //Initialize background images
     mainBackground = loadImage("magicLifts.jpg");
+    mainBackgroundBlurred = loadImage("magicLiftsBlurred.jpg");
     flitwick1 = loadImage("flitwickBlackBottom.jpg");
     flitwick2 = loadImage("flitwickWandBlackBottom.jpg");
     flitwickGreen = loadImage("flitwickWandGreen.jpg");
@@ -318,12 +320,15 @@ void startTraining(String spell) {
  */ 
 void changeIncantation(String spell) {
     if (spell.equals("UP") || spell.equals("DOWN")) { //assert spell must be "UP" or "DOWN"
+        currentBackground = mainBackgroundBlurred;
         String oldMessage = currentMessage;
         String oldIncantation = spell.equals("UP") ? upIncantation : downIncantation;
         String newIncantation = oldIncantation;
         String fileName = spell.equals("UP") ? "up.txt" : "down.txt";
+        int periodCounter = 1;
+        textX = 50;
         
-        currentMessage = "Changing " + spell + " incantation...";
+        currentMessage = "Speak a new " + spell + " incantation.";
         
         //trigger change_incantations_server.py
         OscMessage msg;
@@ -337,16 +342,54 @@ void changeIncantation(String spell) {
         while (newIncantation.equals(oldIncantation)) {
             try {
                 newIncantation = loadStrings(fileName)[0].trim();
+                //animate ellipsis...
+                switch(periodCounter) {
+                    case 1: 
+                        periodCounter = 2;
+                        currentMessage = "Speak a new " + spell + " incantation..";
+                        delay(1000);
+                        break;
+                    case 2:
+                        periodCounter = 3;
+                        currentMessage = "Speak a new " + spell + " incantation...";
+                        delay(1000);
+                        break;
+                    case 3:
+                        periodCounter = 1;
+                        currentMessage = "Speak a new " + spell + " incantation.";
+                        delay(1000);
+                        break;
+                }  
             }
             catch(Exception e) {
                 //no-op
+                //still animate ellipsis...
+                switch(periodCounter) {
+                    case 1: 
+                        periodCounter = 2;
+                        currentMessage = "Speak a new " + spell + " incantation..";
+                        delay(1000);
+                        break;
+                    case 2:
+                        periodCounter = 3;
+                        currentMessage = "Speak a new " + spell + " incantation...";
+                        delay(1000);
+                        break;
+                    case 3:
+                        periodCounter = 1;
+                        currentMessage = "Speak a new " + spell + " incantation.";
+                        delay(1000);
+                        break;
+                }  
             } 
         }
         
         if (spell.equals("UP")) upIncantation = newIncantation;
         else                    downIncantation = newIncantation;
         
+        textX = 30;
         currentMessage = oldMessage;
+        currentBackground = mainBackground;
         showButtons = true;
     }
 }
