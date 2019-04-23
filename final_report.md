@@ -70,7 +70,7 @@ The model architecture is depicted in the following scheme:
 
 ![MagicElevatorLogic](https://user-images.githubusercontent.com/46902147/56620778-5934e400-65e7-11e9-9690-3f9e9c04515c.png)
 
-In total, two user interactions are the inputs for the magic elevator - a wand gesture and a voice command. The wand gesture consists of acceleration data in x,y and z axis which is recorded by a microbit sitting inside the wand. The acceleration data is sent wirelessly to a second microbit, which is plugged into the USB port of the Macbook. The python program wand_to_osc.py
+In total, two user interactions are the inputs for the magic elevator - a wand gesture and a voice command. The wand gesture consists of acceleration data in x,y and z axis which is recorded by a microbit sitting inside the wand. The acceleration data is sent wirelessly to a second microbit, which is plugged into the USB port of the Macbook. The python program wand_to_osc.py packs the acceleration data into OSC packages which are being sent to Wekinator. Wekinator is set up as 
 
 ## Risk to Failure:
 
