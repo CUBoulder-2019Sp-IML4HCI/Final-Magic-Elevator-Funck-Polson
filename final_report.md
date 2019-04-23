@@ -1,6 +1,6 @@
 # The Magic Elevator: Controlling an Elevator with Wand Spellcasting 
 
-This report 
+
 
 ## Idea
 Elevators are a curse and a saviour. They enable heavy equipment to be transported across levels and they are often the only means to enable people with mobility impairments to move up and down in a building. However, waiting for them in an awkward silence is anything but exciting. The magic elevator solves this problem: riders become magicians, summoning their elevator through magic spells. Only a correctly executed spell calls the elevator! 
@@ -25,7 +25,11 @@ Since the elevator is university property and part of the infrastructure in ATLA
 
 ## Hardware Design:
 The requirements of the hardware design resulted directly from the contact with facility management: Any engagement with the elevator must be “hack free”, non-destructive and immediately removable in case of malfunction. The greatest challenge resulting from this restriction turned out to be the physical pressing of the elevator button by an apparatus. 
-Whereas it feels counterintuitive to design a machine strong enough to overcome the spring loaded elevator buttons, this was exactly the case in the magic elevator project. After two iterations of solenoids the designers switched over to LEGO Mindstorm motors, which were finally strong enough to activate the elevator. At the same time, the increased power of the pushing mechanism has not only been trying to push the elevator buttons, but to push the whole apparatus off the wall. 3M Dual Lock proved sufficiantly to tuck the apparatus to the elevator terminal. In order to limit shear forces, the design of the LEGO components was made as light as possible. With a smart arangement of gears and belts, the foward and backward rotational moevement of one motor is driving two linear actuators to press the up and down button independantly from each other. Two pictures of the final assembly can be seen below
+Whereas it feels counterintuitive to design a machine strong enough to overcome the spring loaded elevator buttons, this was exactly the case in the magic elevator project. After two iterations of solenoids the designers switched over to LEGO Mindstorm motors, which were finally strong enough to activate the elevator. At the same time, the increased power of the pushing mechanism has not only been trying to push the elevator buttons, but to push the whole apparatus off the wall. 3M Dual Lock proved sufficiantly to tuck the apparatus to the elevator terminal. In order to limit shear forces, the design of the LEGO components was made as light as possible. With a smart arangement of gears and belts, the foward and backward rotational moevement of one motor is driving two linear actuators to press the up and down button independantly from each other. Two pictures of the final assembly can be seen below.
+
+![image001](https://user-images.githubusercontent.com/46902147/56619864-453bb300-65e4-11e9-9dc1-1901296acc9d.jpg)
+
+![MagicElevator](https://user-images.githubusercontent.com/46902147/56620131-170aa300-65e5-11e9-92e9-9dce94901ad8.jpg)
 
 ## Software Design:
 In the magic elevator a number of hardware pieces are communicating with each other (two microbits, one Macbook, Raspberry Pi, LEGO Mindsortms). It was a challenge to decide which software is running on which hardware piece, how communication is established seamlessly and wirelessly. 
@@ -56,4 +60,3 @@ Risk to Failure:
 
 
 
-![UserStoryFinal](https://user-images.githubusercontent.com/46902147/56617879-3e11a680-65de-11e9-84a1-052fa412968c.png)
