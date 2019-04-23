@@ -14,7 +14,9 @@ int frameNum = 0;
 int r = 150; //red component of background color
 int g = 200; //green component of background color
 int b = 200; //blue component of background color
-int currentTextHue = 0;
+int textR = 255;
+int textG = 255;
+int textB = 255;
 String currentMessage = "The Magic Elevator";
 
 //Variables for train buttons
@@ -32,18 +34,21 @@ float h2 = 90;
 String upIncantation;
 float x3 = x1+w1+15;
 float y3 = y1+(h1/2);
-float w3 = 300;
+float w3 = 285;
 float h3 = h1/2;
 //down incantation
 String downIncantation;
 float x4 = x2+w2+15;
 float y4 = y2+(h2/2);
-float w4 = 300;
+float w4 = 285;
 float h4 = h2/2;
 
 //prevent multiple button clicks at once, preventing repeating training cycles
-Boolean buttonWasClicked = false;
+Boolean showButtons = true;
 
+//Variables for background images
+PImage mainBackground;
+PImage currentBackground;
 
 
 void setup() {
@@ -60,7 +65,7 @@ void setup() {
     voiceDest = new NetAddress("127.0.0.1",12002); //send messages to change_incantations_server.py
     
     //Set up fonts
-    labelFont = createFont("4 Privet Drive", 30);
+    labelFont = createFont("4 Privet Drive", 27);
     buttonFont = createFont("4 Privet Drive", 40);
     headerFont = createFont("LumosLatino", 50);
     trainingFont = createFont("Harry Potter", 60);
@@ -68,27 +73,33 @@ void setup() {
     //Initialize incantations from files
     upIncantation = loadStrings("up.txt")[0].trim();
     downIncantation = loadStrings("down.txt")[0].trim();
+    
+    //Initialize background images
+    mainBackground = loadImage("magicLifts.jpg");
+    currentBackground = mainBackground;
 }
 
 void draw() {
     frameRate(30);
-    background(r, g, b);
+    //background(r, g, b);
+    image(currentBackground, 0, 0);
     drawText();
     
     //Buttons and labels
-    if (!buttonWasClicked) { //don't show buttons during training
+    if (showButtons) { //don't show buttons during training
         //"UP Spell" header
         textFont(headerFont);
         text("UP Spell", 20, y1-80);
     
         //"Train UP" Button
+        fill(210);
         rect(x1,y1,w1,h1);
-        fill(220);
+        fill(0);
         textFont(buttonFont);
-        text("Train Wand", x1+18, y1+20);
+        text("Train Wand", x1+18, y1+22);
         if(mousePressed) {
             if(mouseX>x1 && mouseX <x1+w1 && mouseY>y1 && mouseY <y1+h1) {
-                buttonWasClicked = true;
+                showButtons = false;
                 println("UP wand button clicked.");
                 OscMessage msg = new OscMessage("/startTrainingUp");    
                 oscP5.send(msg, selfDest);
@@ -96,19 +107,19 @@ void draw() {
         } 
         
         //UP incantation label
-        fill(0);
+        fill(255);
         textFont(labelFont);
-        text("Incantation: \"" + upIncantation + "\"", x1+w1+15, y1);
+        text("Incantation: “" + upIncantation + "\"", x1+w1+15, y1);
         
         //UP incantation button
-        fill(0);
+        fill(210);
         rect(x3,y3,w3,h3);
-        fill(220);
+        fill(0);
         textFont(labelFont);
-        text("Change Incantation", x3+8, y3+2);
+        text("Change Incantation", x3+16, y3+5);
         if(mousePressed) {
             if(mouseX>x3 && mouseX <x3+w3 && mouseY>y3 && mouseY <y3+h3) {
-                buttonWasClicked = true;
+                showButtons = false;
                 println("UP incantation button clicked.");
                 OscMessage msg = new OscMessage("/changeIncantationUp");    
                 oscP5.send(msg, selfDest); 
@@ -117,19 +128,19 @@ void draw() {
         
         
         //"DOWN Spell" Header
-        fill(0);
+        fill(255);
         textFont(headerFont);
         text("DOVN Spell", 20, y2-80); //note 'V' is 'W' in LumosLatino for some reason...
     
         //"Train DOWN" Button
-        fill(0);
+        fill(210);
         rect(x2,y2,w2,h2);
-        fill(220);
+        fill(0);
         textFont(buttonFont);
-        text("Train Wand", x2+18, y2+20);
+        text("Train Wand", x2+18, y2+22);
         if(mousePressed) {
             if(mouseX>x2 && mouseX <x2+w2 && mouseY>y2 && mouseY <y2+h2) {
-                buttonWasClicked = true;
+                showButtons = false;
                 println("DOWN wand button clicked.");
                 OscMessage msg = new OscMessage("/startTrainingDown");    
                 oscP5.send(msg, selfDest); 
@@ -137,19 +148,19 @@ void draw() {
         }
         
         //DOWN incantation label
-        fill(0);
+        fill(255);
         textFont(labelFont);
-        text("Incantation: \"" + downIncantation + "\"", x2+w2+15, y2);
+        text("Incantation: “" + downIncantation + "\"", x2+w2+15, y2);
         
         //DOWN incantation button
-        fill(0);
+        fill(210);
         rect(x4,y4,w4,h4);
-        fill(220);
+        fill(0);
         textFont(labelFont);
-        text("Change Incantation", x4+8, y4+2);
+        text("Change Incantation", x4+16, y4+5);
         if(mousePressed) {
             if(mouseX>x4 && mouseX <x4+w4 && mouseY>y4 && mouseY <y4+h4) {
-                buttonWasClicked = true;
+                showButtons = false;
                 println("DOWN incantation button clicked.");
                 OscMessage msg = new OscMessage("/changeIncantationDown");    
                 oscP5.send(msg, selfDest); 
@@ -221,7 +232,7 @@ void startTraining(String spell) {
         startRunning();
         
         //Allow the training button to be clicked again now that this cycle ended
-        buttonWasClicked = false;
+        showButtons = true;
     }
 }
 
@@ -260,7 +271,7 @@ void changeIncantation(String spell) {
         else                    downIncantation = newIncantation;
         
         currentMessage = oldMessage;
-        buttonWasClicked = false;
+        showButtons = true;
     }
 }
 
@@ -331,8 +342,8 @@ void changeBackgroundColor(int red, int green, int blue) {
 void drawText() {  
     stroke(0);
     textAlign(LEFT, TOP); 
-    fill(currentTextHue, 0, 0);
+    fill(textR, textG, textB);
     
     textFont(trainingFont);
-    text(currentMessage, 20, 180);
+    text(currentMessage, 20, 100);
 }
