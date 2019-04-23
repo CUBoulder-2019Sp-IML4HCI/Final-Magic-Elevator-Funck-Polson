@@ -68,7 +68,7 @@ In the magic elevator a number of hardware pieces are communicating with each ot
 
 The model architecture is depicted in the following scheme:
 
-![MagicElevatorLogic](https://user-images.githubusercontent.com/46902147/56620647-e0ce2300-65e6-11e9-8ce8-cb1b66ab1afc.png)
+![MagicElevatorLogic](https://user-images.githubusercontent.com/46902147/56620778-5934e400-65e7-11e9-9690-3f9e9c04515c.png)
 
 
 ## Risk to Failure:
