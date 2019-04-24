@@ -16,14 +16,14 @@ The user experience can best be described with the following figure:
 
 ![UserStoryFinal](https://user-images.githubusercontent.com/46902147/56617879-3e11a680-65de-11e9-84a1-052fa412968c.png)
 
-In this final version of the magic elevator, two elevator riders will take the role of magicians. First, the magicians go through a training mode. The UI asks each magician to train her or his own spell to summon the elevator—the spells that summon the elevator up or down are a combination of wand gestures and corresponding voice incantations. After the training has ended, it is time to put the magicans to the test. Both magicians have to agree on the direction in which they want the elevator to go. Accordingly, both magicians cast the spells they recordied earlier. Only two agreeing, properly executed spells will call the elevator. If there is only one magician present, they can simply call the elevator at will.
+In this final version of the magic elevator, two elevator riders will take the role of magicians. First, the magicians go through a training mode. The UI asks each magician to train her or his own spell to summon the elevator up or down—the spells that summon the elevator are a combination of wand gestures and corresponding voice incantations. After the training has ended, it is time to put the magicans to the test. Both magicians have to agree on the direction in which they want the elevator to go. Accordingly, both magicians cast the spells they recordied earlier. Only two agreeing, properly executed spells will call the elevator. If there is only one magician present, they can simply call the elevator at will by casting their up or down spell.
 
 
-## Encountered Challenges
-The encountered challenges can be summarized under legal, hardware and software challenges and are discussed below. These challenges influenced the design of the elevator.
+## Challenges Encountered 
+The encountered challenges can be summarized as legal, hardware, and software challenges and are discussed below. These challenges influenced the design of the magic elevator system.
 
 ### Receiving Permission:
-Since the elevator is university property and part of the infrastructure in ATLAS, the permission to work on the elevator had to be granted for this project. Thanks to the help of professor Ben Shapiro, the competent authorities from facility management approved the magic elevator project. During the project, Program Manager of Facility Management Operations Terry Swindell was updated about the status of the program and conducted field tests at the elevator. 
+Since the elevator is university property and part of the infrastructure in ATLAS, the permission to work on the elevator had to be granted for this project. Thanks to the help of professor Ben Shapiro, the relevant authorities from facility management approved the magic elevator project. During the project, Program Manager of Facility Management Operations Terry Swindell was updated about the status of the program and field tests conducted at the elevator. 
 
 ### Hardware Design:
 The requirements of the hardware design resulted directly from the contact with facility management: Any engagement with the elevator must be “hack free”, non-destructive and immediately removable in case of malfunction. The greatest challenge resulting from this restriction turned out to be the physical pressing of the elevator button by an apparatus. 
@@ -33,7 +33,7 @@ Whereas it feels counterintuitive to design a machine strong enough to overcome 
 ![MagicElevator](https://user-images.githubusercontent.com/46902147/56620131-170aa300-65e5-11e9-92e9-9dce94901ad8.jpg)
 
 ### Software Design:
-In the magic elevator a number of hardware pieces are communicating with each other (two microbits, one Macbook, Raspberry Pi, LEGO Mindsortms). It was a challenge to decide which software is running on which hardware piece, how communication is established seamlessly and wirelessly. 
+All software is open source. A number of hardware pieces are communicating with each other (two microbits per wand, one Macbook, Raspberry Pi, LEGO Mindstorms motor). It was a challenge to decide which software is running on which hardware piece, and how communication is established seamlessly and wirelessly.
 
 
 
