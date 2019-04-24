@@ -45,12 +45,13 @@ A number of hardware pieces are communicating with each other (two microbits per
 - Micro:bits
 - Elevator Mount
 - Harry Potter Wands
+- MacBook (with its built-in microphone)
 
 ### Software (all open source):
 #### Languages:
 - Processing
 - Python 3
-- Microbit.hex code
+- Micro:bit .HEX code
 
 #### Processing Libraries:
 - oscP5
