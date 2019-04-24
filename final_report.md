@@ -92,12 +92,17 @@ Listed explicitly, the features of this project are the abilities to:
  - Change the voice incantations during runtime
  - Coordinate with fellow magicians to magically call the elevator in an agreed-upon direction
 
-## Risk to Failure
-In the project proposal it was anticipated that a not granted allowance to work on the elevator would bring the whole project to a halt. Luckily, this was not the case. During the runtime of the project, the preliminary chosen solenoid hardware did not deliver the required force, even in the second iteration. Without working hardware nor the ability to replace the springloaded buttons on the elevator, the project was at risk to failure. With the help of professor Shapiro and PhD student Kailey Shara the solenoids were replaced by one LEGO Mindstorm motor. In combination with a laser-cut panel and 3M dual lock tape an apparatus could be built that has enough force to push elevator buttons while sticking to the elevator terminal as required. Unfortunately, the iterations through hardware took longer than anticipated leading to the dropping of some features. This will be discussed in the following section
+## Risks to Failure
+In the project proposal, it was anticipated that a lack of permission to work on the elevator would bring the whole project to a halt. Luckily, this was not the case. Early on in the project, the preliminarily chosen solenoid hardware did not deliver the required force, even in the second iteration. Without working hardware nor the ability to replace the spring-loaded buttons on the elevator, the project was at risk of failing. With the help of professor Shapiro and PhD student Kailey Shara, the solenoids were replaced by one LEGO Mindstorms motor. In combination with a laser-cut acrylic panel and 3M dual lock tape, an apparatus was built that has enough force to push elevator buttons while sticking to the elevator terminal as required. Unfortunately, iterating through hardware took longer than anticipated, so some features had to be dropped in order to save time. This is discussed in the following section.
 
 ## Dropped Features
 - Instead of three magicians (elevator riders), only two are interacting with this version of the magic elevator. This saves the time to develop a voting mechanism and a more sophisticated, probably confusing training mode
 - The interaction inside the elevator has been dropped for simplicity reasons. Pressing up to four buttons inside the elevator would have required more motors and/or gears and a larger LEGO platform. Whereas it would have expanded the user experience, no new machine learning element would have been added. 
+
+## Ethical considerations
+TBD
+
+
 
 
 
