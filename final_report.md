@@ -18,6 +18,12 @@ The user experience can best be described with the following figure:
 
 In this final version of the magic elevator, two elevator riders will take the role of magicians. First, the magicians go through a training mode. The UI asks each magician to train her or his own spell to summon the elevator up or down—the spells that summon the elevator are a combination of wand gestures and corresponding voice incantations. After the training has ended, it is time to put the magicans to the test. Both magicians have to agree on the direction in which they want the elevator to go. Accordingly, both magicians cast the spells they recordied earlier. Only two agreeing, properly executed spells will call the elevator. If there is only one magician present, they can simply call the elevator at will by casting their up or down spell.
 
+## Features
+Listed explicitly, the final features of this project are the abilities to:
+ - Call an elevator up or down with magic spells consisting of wand gestures and voice incantations
+ - Change the wand gestures during runtime
+ - Change the voice incantations during runtime
+ - Coordinate with fellow magicians to magically call the elevator in an agreed-upon direction
 
 ## Challenges Encountered 
 The encountered challenges can be summarized as legal, hardware, and software challenges and are discussed below. These challenges influenced the design of the magic elevator system.
@@ -95,13 +101,6 @@ In the project proposal, it was anticipated that a lack of permission to work on
 ## Dropped Features
 - Instead of three magicians (elevator riders), only two are interacting with this version of the magic elevator. This saved time that would have otherwise been spent developing a voting mechanism and a more sophisticated, probably confusing, training mode
 - The interaction inside the elevator has been dropped for simplicity reasons. Pressing up to four buttons inside the elevator would have required more motors and/or gears and a larger LEGO platform. It would have expanded the user experience, but because it was dropped, time was saved and no new machine learning element had to be added. 
-
-## Final Features
-Listed explicitly, the final features of this project are the abilities to:
- - Call an elevator up or down with magic spells consisting of wand gestures and voice incantations
- - Change the wand gestures during runtime
- - Change the voice incantations during runtime
- - Coordinate with fellow magicians to magically call the elevator in an agreed-upon direction
 
 ## Ethical Considerations
 The magic elevator projet came with a manageable amount of ethical questions. First of all, the elevator could not be damaged or physically hacked in any way to ensure its continued safety. Harming an elevator's operations is a federal offense, so all applicable laws had to be carefully followed. The designers also had to ensure that at any given time, users were able to overrule the system by physically pressing the buttons inside and outside the elevator. Additions to the elevator could not in any way reduce the usability or accessibility of the elevator. To accomplish this, the elevator is controlled only by pressing its buttons like normal, except with mounted hardware instead of human fingers, of course. The first iteration of the hardware included a 3D-printed casing that had outward-facing buttons that allowed fingers to manually press the buttons via the solenoids. But that version had to be scrapped in favor of the new, working LEGO hardware. That hardware mounted at the elevator lacks pushable buttons, but it can easily be removed by the users, returning the elevator to its original state.
