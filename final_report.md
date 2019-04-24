@@ -1,6 +1,7 @@
 # The Magic Elevator: Controlling an Elevator with Wand Spellcasting 
 
-
+![MagicElevatorTitleImg](https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Ftimedotcom.files.wordpress.com%2F2015%2F11%2Fharry-potter-and-the-deathly-hallows-part-i_10d0b26f.jpg)
+Harry Potter and the Deathly Hallows Part 1 (Warner Bros.)
 
 ## Idea
 Elevators are a curse and a saviour. They enable heavy equipment to be transported across levels and they are often the only means to enable people with mobility impairments to move up and down in a building. However, waiting for them in an awkward silence is anything but exciting. The magic elevator solves this problem: riders become magicians, summoning their elevator through magic spells. Only a correctly executed spell calls the elevator! 
