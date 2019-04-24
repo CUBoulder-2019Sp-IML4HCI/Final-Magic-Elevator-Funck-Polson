@@ -60,6 +60,9 @@ The technologies used in this project are listed below.
 - MacBook (with its built-in microphone)
 
 ### Software (all open source):
+
+- Wekinator
+
 #### Languages:
 - Processing
 - Python 3
@@ -78,8 +81,6 @@ The technologies used in this project are listed below.
 - sys
 - time
 - brickpi3
-
-- Wekinator
 
 The Raspberry Pi and BrickPi were combined with the LEGO hardware and the elevator mount to create the button-pushing apparatus, pictured earlier in this document. The Micro:bits contain accelerometers that provide the data for wand gestures and were combined with store-bought Harry Potter wands (really, just their plastic casings) to create the magic wands. The MacBook runs all the software not on the Raspberry Pi (including Wekinator which does the Dynamic Time Warping) and its microphone (or, optionally, the microphone of headphones plugged into the MacBook) listens for voice incantations. Micro:bit .HEX code is required for the Micro:bits, and both Processing and Python had to be used because while Processing proved to be the most useful language for the project overall, certain aspects like voice recognition and controlling the LEGO motor were only possible in Python. 
 
