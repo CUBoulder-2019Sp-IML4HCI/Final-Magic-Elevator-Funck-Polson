@@ -4,7 +4,7 @@
 _Harry Potter and the Deathly Hallows Part 1 (Warner Bros.)_
 
 ## The Idea
-Elevators are both a curse and a savior. They enable heavy equipment to be transported across levels and they are often the only means to enable people with mobility impairments to move up and down in a building. However, waiting for them in an awkward silence is anything but exciting. The magic elevator solves this problem: riders become magicians, summoning their elevator through magic spells. Only a correctly executed spell calls the elevator! 
+Elevators are both a blessing and a curse. They enable heavy equipment to be transported across levels and they are often the only means to enable people with mobility impairments to move up and down in a building, but waiting for them in an awkward silence is anything but exciting. The magic elevator solves this problem: riders become magicians, summoning their elevator through magic spells. Only a correctly executed spell calls the elevator! 
 
 
 ## Mission Statement
