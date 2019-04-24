@@ -15,7 +15,7 @@ Our mission is to provide a Harry Potter–like elevator experience. The interac
 The user experience can best be described with the following figure:
 
 ![UserStoryFinal](https://user-images.githubusercontent.com/46902147/56617879-3e11a680-65de-11e9-84a1-052fa412968c.png)
-TODO: update figure based on final UX
+**_TODO: update figure based on final UX_**
 
 In this final version of the magic elevator, two elevator riders will take the role of magicians. First, the magicians go through a training mode. The UI asks each magician to train her or his own spell to summon the elevator up or down—the spells that summon the elevator are a combination of wand gestures and corresponding voice incantations. After the training has ended, it is time to put the magicans to the test. Both magicians have to agree on the direction in which they want the elevator to go. Accordingly, both magicians cast the spells they recordied earlier. Only two agreeing, properly executed spells will call the elevator. If there is only one magician present, they can simply call the elevator at will by casting their up or down spell.
 
@@ -38,13 +38,13 @@ Whereas it feels counterintuitive to design a machine strong enough to overcome 
 
 
 ![MagicElevatorHardware](https://user-images.githubusercontent.com/46902147/56620131-170aa300-65e5-11e9-92e9-9dce94901ad8.jpg)
-TODO: update picture with everything properly connected
+**_TODO: update picture with everything properly connected_**
 
 ### Software Design:
 A number of hardware pieces are communicating with each other (two microbits per wand, a Macbook, a Raspberry Pi, a LEGO Mindstorms motor). It was a challenge to decide which software is running on which hardware piece, and how communication is established seamlessly and wirelessly between them. It was also challenging to 1) tune the parameters for Dynamic Time Warping models for optimal gesture classification, 2) incorporate voice incantations along with the wand gestures (Google's voice-to-text API is used in the final product), and 3) to consistently identify voice incantations in noisy environments. A picture of the final software arrangement is shown below.
 
 ![MagicElevatorSoftware](https://user-images.githubusercontent.com/14846863/56691152-72e43300-669c-11e9-9324-7e4fd87d5203.png)
-TODO: update picture with everything running
+**_TODO: update picture with everything running_**
 
 
 
@@ -108,10 +108,10 @@ In the project proposal, it was anticipated that a lack of permission to work on
 The magic elevator projet came with a manageable amount of ethical questions. First of all, the elevator could not be damaged or physically hacked in any way to ensure its continued safety. Harming an elevator's operations is a federal offense, so all applicable laws had to be carefully followed. The designers also had to ensure that at any given time, users were able to overrule the system by physically pressing the buttons inside and outside the elevator. Additions to the elevator could not in any way reduce the usability or accessibility of the elevator. To accomplish this, the elevator is controlled only by pressing its buttons like normal, except with mounted hardware instead of human fingers, of course. The first iteration of the hardware included a 3D-printed casing that had outward-facing buttons that allowed fingers to manually press the buttons via the solenoids. But that version had to be scrapped in favor of the new, working LEGO hardware. That hardware mounted at the elevator lacks pushable buttons, but it can easily be removed by the users, returning the elevator to its original state.
 
 ## Conclusions
-TODO
+**_TODO_**
 
 ## Bibliography
-TODO
+**_TODO_**
 
 
 
