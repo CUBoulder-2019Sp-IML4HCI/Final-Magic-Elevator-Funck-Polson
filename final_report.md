@@ -16,7 +16,7 @@ The user experience can best be described with the following figure:
 
 ![UserStoryFinal](https://user-images.githubusercontent.com/46902147/56617879-3e11a680-65de-11e9-84a1-052fa412968c.png)
 
-In this final version of the magic elevator, two elevator riders will take the role of magicians. First, the magicians go through a training mode. The UI asks each magician to train her or his own spell to summon the elevator - a gesture and a corresponding voice command is recorded for the two commands of the elevator going up and down. After the training has ended, it is time to put the magicans to the test. Both magicians have to agree on the direction which they want the elevator to go. Accordingly, both magicians cast the spell which they were recording earlier. Only two properly executed spells will call the elevator. 
+In this final version of the magic elevator, two elevator riders will take the role of magicians. First, the magicians go through a training mode. The UI asks each magician to train her or his own spell to summon the elevator—the spells that call the elevator up or down are a combination of wand gestures and corresponding voice incantations. After the training has ended, it is time to put the magicans to the test. Both magicians have to agree on the direction in which they want the elevator to go. Accordingly, both magicians cast the spells they recordied earlier. Only two agreeing, properly executed spells will call the elevator. If there is only one magician present, they can simply call the elevator at will.
 
 
 ## Encountered Challenges
