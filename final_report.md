@@ -30,10 +30,13 @@ The requirements of the hardware design came directly from contact with facility
 Whereas it feels counterintuitive to design a machine strong enough to overcome the spring loaded elevator buttons, this was exactly the case in the magic elevator project. After two failed iterations of solenoids which were too weak to press the buttons, the designers switched to a LEGO Mindstorms motor that was finally strong enough to push the elevator buttons. At the same time, however, the increased power of the pushing mechanism was trying to push not only the elevator buttons, but also the whole apparatus off the wall. 3M Dual Lock proved sufficiant to stick the apparatus to the elevator terminal. In order to limit shear forces, the design of the LEGO components was made as light as possible. With a smart arrangement of gears and belts, the foward and backward rotational movement of one motor is driving two linear actuators to press the up and down buttons independantly. A picture of the final assembly is shown below.
 
 
-![MagicElevator](https://user-images.githubusercontent.com/46902147/56620131-170aa300-65e5-11e9-92e9-9dce94901ad8.jpg)
+![MagicElevatorHardware](https://user-images.githubusercontent.com/46902147/56620131-170aa300-65e5-11e9-92e9-9dce94901ad8.jpg)
 
 ### Software Design:
-A number of hardware pieces are communicating with each other (two microbits per wand, a Macbook, a Raspberry Pi, a LEGO Mindstorms motor). It was a challenge to decide which software is running on which hardware piece, and how communication is established seamlessly and wirelessly between them. It was also challenging to 1) tune the parameters for Dynamic Time Warping models for optimal gesture classification, 2) incorporate voice incantations along with the wand gestures (Google's voice-to-text API is used in the final product), and 3) to consistently identify voice incantations in noisy environments.
+A number of hardware pieces are communicating with each other (two microbits per wand, a Macbook, a Raspberry Pi, a LEGO Mindstorms motor). It was a challenge to decide which software is running on which hardware piece, and how communication is established seamlessly and wirelessly between them. It was also challenging to 1) tune the parameters for Dynamic Time Warping models for optimal gesture classification, 2) incorporate voice incantations along with the wand gestures (Google's voice-to-text API is used in the final product), and 3) to consistently identify voice incantations in noisy environments. A picture of the final software arrangement is shown below.
+
+![MagicElevatorSoftware](https://user-images.githubusercontent.com/14846863/56691152-72e43300-669c-11e9-9324-7e4fd87d5203.png)
+TODO: update picture with everything running
 
 
 
