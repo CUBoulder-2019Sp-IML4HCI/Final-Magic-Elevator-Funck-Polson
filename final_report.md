@@ -38,6 +38,8 @@ A number of hardware pieces are communicating with each other (two microbits per
 
 
 ## Built-in Technologies
+The technologies used in this project are listed below.
+
 ### Hardware:
 - Raspberry Pi 3
 - BrickPi 3
@@ -65,6 +67,8 @@ A number of hardware pieces are communicating with each other (two microbits per
 - sys
 - time
 - brickpi3
+
+The Raspberry Pi and BrickPi were combined with the LEGO hardware and the elevator mount to create the button-pushing apparatus, pictured earlier in this document. The Micro:bits contain accelerometers that provide the data for wand gestures and were combined with store-bought Harry Potter wands (really, just their plastic casings) to create the magic wands. The MacBook runs all the software not on the Raspberry Pi and its microphone (or, optionally, the microphone of headphones plugged into the MacBook) listens for voice incantations. Micro:bit .HEX code is required for the Micro:bits, and both Processing and Python had to be used because while Processing proved to be the most useful language for the project overall, certain aspects like voice recognition and controlling the LEGO motor were only possible in Python. 
 
 ## Model Architecture:
 
