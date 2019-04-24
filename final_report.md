@@ -3,21 +3,20 @@
 ![MagicElevatorTitleImg](https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Ftimedotcom.files.wordpress.com%2F2015%2F11%2Fharry-potter-and-the-deathly-hallows-part-i_10d0b26f.jpg)
 Harry Potter and the Deathly Hallows Part 1 (Warner Bros.)
 
-## Idea
+## The Idea
 Elevators are a curse and a saviour. They enable heavy equipment to be transported across levels and they are often the only means to enable people with mobility impairments to move up and down in a building. However, waiting for them in an awkward silence is anything but exciting. The magic elevator solves this problem: riders become magicians, summoning their elevator through magic spells. Only a correctly executed spell calls the elevator! 
 
 
-## Description of final user experience
+## Mission Statement
+Our mission is to provide a Harry Potter–like elevator experience. The interaction with the input device, a magic wand, results in a magically activated elevator terminal. The user experience is designed to be seamless and intuitive—magic.
+
+
+## Description of Final User Experience
 The user experience can best be described with the following figure:
 
 ![UserStoryFinal](https://user-images.githubusercontent.com/46902147/56617879-3e11a680-65de-11e9-84a1-052fa412968c.png)
 
 In this final version of the magic elevator, two elevator riders will take the role of magicians. First, the magicians go through a training mode. The UI asks each magician to train her or his own spell to summon the elevator - a gesture and a corresponding voice command is recorded for the two commands of the elevator going up and down. After the training has ended, it is time to put the magicans to the test. Both magicians have to agree on the direction which they want the elevator to go. Accordingly, both magicians cast the spell which they were recording earlier. Only two properly executed spells will call the elevator. 
-
-
-
-## Mission Statement
-Our mission is to provide a Harry Potter elevator experience. The interaction with the input device (a magic wand) results in a magically activated elevator terminal. As part of our mission the user experience is designed to be seamless and intuitive.
 
 
 ## Encountered Challenges
