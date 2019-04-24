@@ -102,7 +102,11 @@ In the project proposal, it was anticipated that a lack of permission to work on
 ## Ethical Considerations
 The magic elevator projet came with a manageable amount of ethical questions. First of all, the elevator could not be damaged or physically hacked in any way to ensure its continued safety. Harming an elevator's operations is a federal offense, so all applicable laws had to be carefully followed. The designers also had to ensure that at any given time, users were able to overrule the system by physically pressing the buttons inside and outside the elevator. Additions to the elevator could not in any way reduce the usability or accessibility of the elevator. To accomplish this, the elevator is controlled only by pressing its buttons like normal, except with mounted hardware instead of human fingers, of course. The first iteration of the hardware included a 3D-printed casing that had outward-facing buttons that allowed fingers to manually press the buttons via the solenoids. But that version had to be scrapped in favor of the new, working LEGO hardware. That hardware mounted at the elevator lacks pushable buttons, but it can easily be removed by the users, returning the elevator to its original state.
 
+## Conclusions
+TODO
 
+## Bibliography
+TODO
 
 
 
