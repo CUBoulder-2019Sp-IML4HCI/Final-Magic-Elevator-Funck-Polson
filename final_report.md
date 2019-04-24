@@ -73,22 +73,29 @@ The technologies used in this project are listed below.
 
 The Raspberry Pi and BrickPi were combined with the LEGO hardware and the elevator mount to create the button-pushing apparatus, pictured earlier in this document. The Micro:bits contain accelerometers that provide the data for wand gestures and were combined with store-bought Harry Potter wands (really, just their plastic casings) to create the magic wands. The MacBook runs all the software not on the Raspberry Pi (including Wekinator which does the Dynamic Time Warping) and its microphone (or, optionally, the microphone of headphones plugged into the MacBook) listens for voice incantations. Micro:bit .HEX code is required for the Micro:bits, and both Processing and Python had to be used because while Processing proved to be the most useful language for the project overall, certain aspects like voice recognition and controlling the LEGO motor were only possible in Python. 
 
-## Model Architecture:
+## Model Architecture
 
 The model architecture is depicted in the following scheme:
 
 ![MagicElevatorLogic](https://user-images.githubusercontent.com/46902147/56620778-5934e400-65e7-11e9-9690-3f9e9c04515c.png)
 
-Two user interactions are the inputs for the magic elevator system: a wand gesture and a voice command. The wand gesture consists of acceleration data in the x, y, and z axes from Micro:bits sitting inside the wands. The acceleration data is sent wirelessly to another Micro:bit plugged into the USB port of the MacBook. The Python script `wand_to_osc.py` packs the acceleration data into OSC packages which are then sent to Wekinator. Wekinator is set up with the model type "Dynamic Time Warping" (DTW) and listens for three inputs (x, y, z), outputting 3 gesture types (up, down, and no gesture). The training and run mode of Wekinator are controlled via OSC messages coming from the user interface. The OSC message for an elevator up or down signal is sent to the Raspberry Pi only if the trained gesture is performed with a sufficient accuracy. 
+Two user interactions are the inputs for the magic elevator system: a wand gesture and a voice command. The wand gesture consists of acceleration data in the x, y, and z axes from Micro:bits sitting inside the wands. The acceleration data is sent wirelessly to another Micro:bit plugged into the USB port of the MacBook. The Python script `wand_to_osc.py` packs the acceleration data into OSC messages which are then sent to Wekinator. Wekinator is set up with the model type "Dynamic Time Warping" (DTW) and listens for three inputs (x, y, z), outputting 3 gesture classifications (up, down, and no gesture). The training and run mode of Wekinator are controlled via OSC messages coming from the user interface. The OSC message for an elevator up or down signal is sent to the Raspberry Pi only if the trained gesture is performed with sufficient accuracy. 
 
-On a second input channel, the voice of the magicians are recorded. With the help of Google's speech-to-text software, the spoken words are translated into text with the `incantations.py` script. The transcribed speech is constantly compared against the incantations stored in two text documents (`up.txt` and `down.txt`). By default, the txt documents contain the phrases "floors above" and "floors below". However, they can be overwritten in the training mode. Once a match is detected, the corresponding OSC message for up or down is sent to the Raspberry Pi. 
+On a second input channel, the voice of the magicians are recorded. With the help of Google's speech-to-text software, the spoken words are translated into text with the `incantations.py` script. The transcribed speech is constantly compared against the incantations stored in two text documents (`up.txt` and `down.txt`). By default, the txt documents contain the phrases "floors above" and "floors below". However, they can be overwritten during runtime in the training mode. Once a match is detected, the corresponding OSC message for up or down is sent to the Raspberry Pi. 
 
 On the Raspberry Pi, the OSC messages generated through the wand gesutures and voice transcriptions are brought together in the `callelevator.pde` program. Only if both messages indicate the same elevator direction does that program send the motor activation signal through the BrickPi3 shield. The BrickPi3 is attached to the Raspberry Pi through the GPIO (General-Purpose Input/Output) pins and is powered by a 12V battery pack. The motor activation signal triggers the electric motor to turn approximately 4.2 rotations in either direction (depending on the up or down signal). Through gears and belts the rotary motion is translated to a linear motion which eventually presses either elevator button, summoning the elevator.
 
-## Risk to Failure:
+## Features
+Listed explicitly, the features of this project are the abilities to:
+ - Call an elevator up or down with magic spells consisting of wand gestures and voice incantations
+ - Change the wand gestures during runtime
+ - Change the voice incantations during runtime
+ - Coordinate with fellow magicians to magically call the elevator in an agreed-upon direction
+
+## Risk to Failure
 In the project proposal it was anticipated that a not granted allowance to work on the elevator would bring the whole project to a halt. Luckily, this was not the case. During the runtime of the project, the preliminary chosen solenoid hardware did not deliver the required force, even in the second iteration. Without working hardware nor the ability to replace the springloaded buttons on the elevator, the project was at risk to failure. With the help of professor Shapiro and PhD student Kailey Shara the solenoids were replaced by one LEGO Mindstorm motor. In combination with a laser-cut panel and 3M dual lock tape an apparatus could be built that has enough force to push elevator buttons while sticking to the elevator terminal as required. Unfortunately, the iterations through hardware took longer than anticipated leading to the dropping of some features. This will be discussed in the following section
 
-## Dropped Features:
+## Dropped Features
 - Instead of three magicians (elevator riders), only two are interacting with this version of the magic elevator. This saves the time to develop a voting mechanism and a more sophisticated, probably confusing training mode
 - The interaction inside the elevator has been dropped for simplicity reasons. Pressing up to four buttons inside the elevator would have required more motors and/or gears and a larger LEGO platform. Whereas it would have expanded the user experience, no new machine learning element would have been added. 
 
