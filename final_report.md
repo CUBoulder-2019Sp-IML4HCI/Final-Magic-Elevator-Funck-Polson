@@ -89,19 +89,19 @@ On a second input channel, the voice of the magicians are recorded. With the hel
 
 On the Raspberry Pi, the OSC messages generated through the wand gesutures and voice transcriptions are brought together in the `callelevator.pde` program. Only if both messages indicate the same elevator direction does that program send the motor activation signal through the BrickPi3 shield. The BrickPi3 is attached to the Raspberry Pi through the GPIO (General-Purpose Input/Output) pins and is powered by a 12V battery pack. The motor activation signal triggers the electric motor to turn approximately 4.2 rotations in either direction (depending on the up or down signal). Through gears and belts the rotary motion is translated to a linear motion which eventually presses either elevator button, summoning the elevator.
 
-## Features
-Listed explicitly, the features of this project are the abilities to:
- - Call an elevator up or down with magic spells consisting of wand gestures and voice incantations
- - Change the wand gestures during runtime
- - Change the voice incantations during runtime
- - Coordinate with fellow magicians to magically call the elevator in an agreed-upon direction
-
 ## Risks to Failure
 In the project proposal, it was anticipated that a lack of permission to work on the elevator would bring the whole project to a halt. Luckily, this was not the case. Early on in the project, the preliminarily chosen solenoid hardware did not deliver the required force, even in the second iteration. Without working hardware nor the ability to replace the spring-loaded buttons on the elevator, the project was at risk of failing. With the help of professor Shapiro and PhD student Kailey Shara, the solenoids were replaced by one LEGO Mindstorms motor. In combination with a laser-cut acrylic panel and 3M dual lock tape, an apparatus was built that has enough force to push elevator buttons while sticking to the elevator terminal as required. Unfortunately, iterating through hardware took longer than anticipated, so some features had to be dropped in order to save time. This is discussed in the following section.
 
 ## Dropped Features
 - Instead of three magicians (elevator riders), only two are interacting with this version of the magic elevator. This saved time that would have otherwise been spent developing a voting mechanism and a more sophisticated, probably confusing, training mode
 - The interaction inside the elevator has been dropped for simplicity reasons. Pressing up to four buttons inside the elevator would have required more motors and/or gears and a larger LEGO platform. It would have expanded the user experience, but because it was dropped, time was saved and no new machine learning element had to be added. 
+
+## Final Features
+Listed explicitly, the final features of this project are the abilities to:
+ - Call an elevator up or down with magic spells consisting of wand gestures and voice incantations
+ - Change the wand gestures during runtime
+ - Change the voice incantations during runtime
+ - Coordinate with fellow magicians to magically call the elevator in an agreed-upon direction
 
 ## Ethical Considerations
 The magic elevator projet came with a manageable amount of ethical questions. First of all, the elevator could not be damaged or physically hacked in any way to ensure its continued safety. Harming an elevator's operations is a federal offense, so all applicable laws had to be carefully followed. The designers also had to ensure that at any given time, users were able to overrule the system by physically pressing the buttons inside and outside the elevator. Additions to the elevator could not in any way reduce the usability or accessibility of the elevator. To accomplish this, the elevator is controlled only by pressing its buttons like normal, except with mounted hardware instead of human fingers, of course. The first iteration of the hardware included a 3D-printed casing that had outward-facing buttons that allowed fingers to manually press the buttons via the solenoids. But that version had to be scrapped in favor of the new, working LEGO hardware. That hardware mounted at the elevator lacks pushable buttons, but it can easily be removed by the users, returning the elevator to its original state.
