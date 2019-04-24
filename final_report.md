@@ -90,6 +90,7 @@ The Raspberry Pi and BrickPi were combined with the LEGO hardware and the elevat
 The model architecture is depicted in the following scheme:
 
 ![MagicElevatorLogic](https://user-images.githubusercontent.com/46902147/56620778-5934e400-65e7-11e9-9690-3f9e9c04515c.png)
+**_TODO: fix typos_**
 
 Two user interactions are the inputs for the magic elevator system: a wand gesture and a voice command. The wand gesture consists of acceleration data in the x, y, and z axes from Micro:bits sitting inside the wands. The acceleration data is sent wirelessly to another Micro:bit plugged into the USB port of the MacBook. The Python script `wand_to_osc.py` packs the acceleration data into OSC messages which are then sent to Wekinator. Wekinator is set up with the model type "Dynamic Time Warping" (DTW) and listens for three inputs (x, y, z), outputting 3 gesture classifications (up, down, and no gesture). The training and run mode of Wekinator are controlled via OSC messages coming from the user interface. The OSC message for an elevator up or down signal is sent to the Raspberry Pi only if the trained gesture is performed with sufficient accuracy. 
 
