@@ -31,6 +31,7 @@ Whereas it feels counterintuitive to design a machine strong enough to overcome 
 
 
 ![MagicElevatorHardware](https://user-images.githubusercontent.com/46902147/56620131-170aa300-65e5-11e9-92e9-9dce94901ad8.jpg)
+TODO: update picture with everything properly connected
 
 ### Software Design:
 A number of hardware pieces are communicating with each other (two microbits per wand, a Macbook, a Raspberry Pi, a LEGO Mindstorms motor). It was a challenge to decide which software is running on which hardware piece, and how communication is established seamlessly and wirelessly between them. It was also challenging to 1) tune the parameters for Dynamic Time Warping models for optimal gesture classification, 2) incorporate voice incantations along with the wand gestures (Google's voice-to-text API is used in the final product), and 3) to consistently identify voice incantations in noisy environments. A picture of the final software arrangement is shown below.
