@@ -37,22 +37,22 @@ A number of hardware pieces are communicating with each other (two microbits per
 
 
 
-## Built in Technologies:
+## Built-in Technologies
 ### Hardware:
 - Raspberry Pi 3
 - BrickPi 3
-- Lego Mindstorm Motor + Miscellaneous
-- Micro Bits
+- LEGO Mindstorms Motor + Miscellaneous LEGOs
+- Micro:bits
 - Elevator Mount
-- Harry Potter Wand 
+- Harry Potter Wands
 
-### Software (all open source)
+### Software (all open source):
 #### Languages:
 - Processing
 - Python 3
 - Microbit.hex code
 
-#### Processing Libraries
+#### Processing Libraries:
 - oscP5
 - netP5
 - processing.io
