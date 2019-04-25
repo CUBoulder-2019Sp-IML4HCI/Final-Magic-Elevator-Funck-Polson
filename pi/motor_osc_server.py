@@ -22,8 +22,9 @@ class MotorController:
     
     def __init__(self, bp):
         self.BP = bp
-        self.press_up = 100    # TODO: change this to the correct position
-        self.press_down = -100 # TODO: change this to the correct position
+        # Positions assume motor is at 0 when code starts
+        self.press_up = -3050    
+        self.press_down = 2700
         print("Initialized.")
 
 
@@ -36,7 +37,7 @@ class MotorController:
         target = self.press_up
         BP.set_motor_position(BP.PORT_A, target)    # set motor A's target position to the current position of motor D
         print("Pressed UP: Motor A target: %6d  Motor A position: %6d" % (target, BP.get_motor_encoder(BP.PORT_A)))
-        time.sleep(2.0)  # delay for 2.0 seconds
+        time.sleep(10.0)  # delay for 2.0 seconds
         BP.set_motor_position(BP.PORT_A, 0)  # reset motor position    
             
     def call_down(self, signal_name, data):
@@ -48,7 +49,7 @@ class MotorController:
         target = self.press_down
         BP.set_motor_position(BP.PORT_A, target)    # set motor A's target position to the current position of motor D
         print("Pressed DOWN: Motor A target: %6d  Motor A position: %6d" % (target, BP.get_motor_encoder(BP.PORT_A)))
-        time.sleep(2.0)  # delay for 2.0 seconds
+        time.sleep(10.0)  # delay for 2.0 seconds
         BP.set_motor_position(BP.PORT_A, 0)  # reset motor position
 
          
@@ -63,7 +64,7 @@ if __name__ == "__main__":
     except IOError as error:
         print(error)
 
-    BP.set_motor_limits(BP.PORT_A, 50, 200)          # optionally set a power limit (in percent) and a speed limit (in Degrees Per Second)
+    BP.set_motor_limits(BP.PORT_A, 99, 400)          # optionally set a power limit (in percent) and a speed limit (in Degrees Per Second)
     
     ctrl = MotorController(BP)
 
