@@ -1,4 +1,5 @@
 # The Magic Elevator: Controlling an Elevator with Wand Spellcasting 
+Max Funck, Shawn Polson
 
 ![MagicElevatorTitleImg](https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Ftimedotcom.files.wordpress.com%2F2015%2F11%2Fharry-potter-and-the-deathly-hallows-part-i_10d0b26f.jpg)
 _Harry Potter and the Deathly Hallows Part 1 (Warner Bros.)_
