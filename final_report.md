@@ -7,6 +7,8 @@ _Harry Potter and the Deathly Hallows Part 1 (Warner Bros.)_
 ## The Idea
 Elevators are both a blessing and a curse. They enable heavy equipment to be transported across levels and they are often the only means to enable people with mobility impairments to move up and down in a building, but waiting for them in an awkward silence is anything but exciting. The magic elevator solves this problem: riders become magicians, summoning their elevator through magic spells. Only a correctly executed spell calls the elevator! 
 
+Magicians weild magic wands that are plastic toy Harry Potter wands whose insides were gutted and replaced with a Micro:bit that senses X, Y, and Z acceleration. They perform wand motions—that they come up with and train via the Magic Elevator user interface—in tandem with voice incantations—again, set via the user interface—that correspond to calling the elevator either up or down. 
+
 
 ## Mission Statement
 Our mission is to provide a Harry Potter–like elevator experience. The interaction with the input device, a magic wand, results in a magically activated elevator terminal. The user experience is designed to be seamless and intuitive—magic.
