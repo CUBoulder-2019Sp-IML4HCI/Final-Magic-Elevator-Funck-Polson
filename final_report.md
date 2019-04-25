@@ -9,7 +9,7 @@ Elevators are both a blessing and a curse. They enable heavy equipment to be tra
 
 Magicians weild magic wands that are plastic toy Harry Potter wands whose insides were gutted and replaced with a Micro:bit that senses X, Y, and Z acceleration. They perform wand motions—that they come up with and train via the Magic Elevator user interface—in tandem with voice incantations—again, set via the user interface—that correspond to calling the elevator either up or down. When spells are correctly cast, a button-pushing mechanism built almost entirely out of LEGO parts that is mounted over the elevator buttons summons the elevator in the appropriate direction.
 
-Magicians are free to train a new wand motion or set a new incantation for their spells at any time; Professor Flitwick walks them through it in the user interface. When two magicians are present, they must work together to cast agreeing spells to call the elevator in one direction. It's a game; only sufficiently skilled magicians may enter the Magic Elevator. When only one magician is present, they can simply call the elevator at will.
+Magicians are free to train a new wand motion or set a new incantation for their spells at any time; Professor Flitwick walks them through it in the user interface. When two magicians are present, they must work together to cast agreeing spells to call the elevator in one direction. It's a game; only sufficiently skilled magicians may enter the Magic Elevator! When only one magician is present, they can simply call the elevator at will.
 
 
 ## Mission Statement
