@@ -13,7 +13,7 @@ Magicians are free to train a new wand motion or set a new incantation for their
 
 
 ## Mission Statement
-Our mission is to provide a Harry Potter–like elevator experience. The interaction with the input device, a magic wand, results in a magically activated elevator terminal. The user experience is designed to be seamless and intuitive—magic.
+Our mission is to provide a Harry Potter–like elevator experience. The interaction with the input device, a magic wand, results in a magically activated elevator terminal that presses the buttons to call the elevator. The user experience is designed to be seamless and intuitive—magic.
 
 
 ## Description of Final User Experience
