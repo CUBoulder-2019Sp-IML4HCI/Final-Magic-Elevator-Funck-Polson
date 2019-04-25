@@ -5,11 +5,11 @@ Max Funck, Shawn Polson
 _Harry Potter and the Deathly Hallows Part 1 (Warner Bros.)_
 
 ## The Idea
-Elevators are both a blessing and a curse. They enable heavy equipment to be transported across levels and they are often the only means by which people with mobility impairments can move up and down in a building, but waiting for them in an awkward silence is anything but exciting. The Magic Elevator solves this problem: riders become magicians, summoning their elevator through magic spells. Only a correctly executed spell calls the elevator! 
+Elevators are both a blessing and a curse. They enable heavy equipment to be transported across levels and they are often the only means by which people with mobility impairments can move up and down in a building, but waiting for them in an awkward silence is anything but exciting. The Magic Elevator solves this problem: riders become witches/wizards, summoning their elevator through magic spells. Only a correctly executed spell calls the elevator! 
 
-Magicians wield magic wands that are plastic toy Harry Potter wands whose insides were gutted and replaced with a Micro:bit that senses X, Y, and Z acceleration. They perform wand motions with voice incantations that together call the elevator either up or down. They come up with and train the motions and incantations themselves via the Magic Elevator user interface (UI). When spells are correctly cast, a button-pushing mechanism built almost entirely out of LEGO parts that is mounted over the elevator buttons summons the elevator in the appropriate direction.
+Witches/wizards wield magic wands that are plastic toy Harry Potter wands whose insides were gutted and replaced with a Micro:bit that senses X, Y, and Z acceleration. They perform wand motions with voice incantations that together call the elevator either up or down. They come up with and train the motions and incantations themselves via the Magic Elevator user interface (UI). When spells are correctly cast, a button-pushing mechanism built almost entirely out of LEGO parts that is mounted over the elevator buttons summons the elevator in the appropriate direction.
 
-Magicians are free to train a new wand motion or set a new incantation for their spells at any time; Professor Flitwick walks them through it in the UI. When two magicians are present, they must work together to cast agreeing spells to call the elevator in one direction. It's a game; only sufficiently skilled magicians may enter the Magic Elevator! When only one magician is present, they can simply call the elevator at will.
+Witches/wizards are free to train a new wand motion or set a new incantation for their spells at any time; Professor Flitwick walks them through it in the UI. When two are present, they must work together to cast agreeing spells to call the elevator in one direction. It's a game; only sufficiently skilled witches/wizards may enter the Magic Elevator! When only one is present, they can simply call the elevator at will.
 
 
 ## Mission Statement
@@ -22,7 +22,7 @@ The user experience can best be described with the following cartoon figure:
 ![UserStoryGithub](https://user-images.githubusercontent.com/46902147/56765798-20227e00-6765-11e9-979d-04eb72f43116.png)
 
 
-In the final version of the Magic Elevator, two elevator riders can take the role of magicians. First, the magicians go through a training mode (the third panel). The UI asks each magician to train her or his own spell to summon the elevator up or down; the spells are a combination of wand gestures and corresponding voice incantations. After the training has ended, it is time to put the magicans to the test. Both magicians have to agree on the direction in which they want the elevator to go. Accordingly, both magicians cast the spells they recordied earlier (fourth panel). Only two agreeing, properly executed spells will call the elevator(fifth panel). If there is only one magician present, they can simply call the elevator at will by casting their up or down spell (last panel).
+In the final version of the Magic Elevator, two elevator riders can take the role of witch/wizard. First, they go through a training mode (the third panel). The UI asks each witch/wizard to train her or his own spell to summon the elevator up or down; the spells are a combination of wand motions and corresponding voice incantations. After the training has ended, it is time to put them to the test. Both witches/wizards have to agree on the direction in which they want the elevator to go. Accordingly, they both cast the spells they recordied earlier (fourth panel). Only two agreeing, properly executed spells will call the elevator (fifth panel). If there is only one witch/wizard present, they can simply call the elevator at will by casting their up or down spell (last panel).
 
 ## Description of User Interface
 While users of this system mainly interact just with their wands and the elevator, there is a UI on a computer through which they can train their wand motions, change their associated incantations, and see feedback from various system components. The UI is pictured below.
@@ -33,10 +33,10 @@ While users of this system mainly interact just with their wands and the elevato
 
 ## Features
 Listed explicitly, the final features of this project are the abilities to:
- - Call an elevator up or down with magic spells consisting of wand gestures and voice incantations
- - Change the wand gestures during runtime
+ - Call an elevator up or down with magic spells consisting of wand motions and voice incantations
+ - Change the wand motions during runtime
  - Change the voice incantations during runtime
- - Coordinate with fellow magicians to magically call the elevator in an agreed-upon direction
+ - Coordinate with fellow witches/wizards to magically call the elevator in an agreed-upon direction
 
 ## Challenges Encountered 
 The encountered challenges can be summarized as legal, hardware, and software challenges and are discussed below. These challenges influenced the design of the magic elevator system.
@@ -105,7 +105,7 @@ The model architecture is depicted in the following scheme:
 
 Two user interactions are the inputs for the magic elevator system: a wand gesture and a voice command. The wand gesture consists of acceleration data in the x, y, and z axes from Micro:bits sitting inside the wands. The acceleration data is sent wirelessly to another Micro:bit plugged into the USB port of the MacBook. The Python script `wand_to_osc.py` packs the acceleration data into OSC messages which are then sent to Wekinator. Wekinator is set up with the model type "Dynamic Time Warping" (DTW) and listens for three inputs (x, y, z), outputting 3 gesture classifications (up, down, and no gesture). The training and run mode of Wekinator are controlled via OSC messages coming from the UI. The OSC message for an elevator up or down signal is sent to the Raspberry Pi only if the trained gesture is performed with sufficient accuracy. 
 
-On a second input channel, the voice of the magicians are recorded. With the help of Google's speech-to-text software, the spoken words are translated into text with the `incantations.py` script. The transcribed speech is constantly compared against the incantations stored in two text documents (`up.txt` and `down.txt`). By default, the txt documents contain the phrases "floors above" and "floors below". However, they can be overwritten during runtime in the training mode. Once a match is detected, the corresponding OSC message for up or down is sent to the Raspberry Pi. 
+On a second input channel, the voice of the witches/wizards are recorded. With the help of Google's speech-to-text software, the spoken words are translated into text with the `incantations.py` script. The transcribed speech is constantly compared against the incantations stored in two text documents (`up.txt` and `down.txt`). By default, the txt documents contain the phrases "floors above" and "floors below". However, they can be overwritten during runtime in the training mode. Once a match is detected, the corresponding OSC message for up or down is sent to the Raspberry Pi. 
 
 On the Raspberry Pi, the OSC messages generated through the wand gesutures and voice transcriptions are brought together in the `callelevator.pde` program. Only if both messages indicate the same elevator direction does that program send the motor activation signal through the BrickPi3 shield. The BrickPi3 is attached to the Raspberry Pi through the GPIO (General-Purpose Input/Output) pins and is powered by a 12V battery pack. The motor activation signal triggers the electric motor to turn approximately 4.2 rotations in either direction (depending on the up or down signal). Through gears and belts the rotary motion is translated to a linear motion which eventually presses either elevator button, summoning the elevator.
 
@@ -113,7 +113,7 @@ On the Raspberry Pi, the OSC messages generated through the wand gesutures and v
 In the project proposal, it was anticipated that a lack of permission to work on the elevator would bring the whole project to a halt. Luckily, this was not the case. Early on in the project, the preliminarily chosen solenoid hardware did not deliver the required force, even in the second iteration. Without working hardware nor the ability to replace the spring-loaded buttons on the elevator, the project was at risk of failing. With the help of professor Shapiro and PhD student Kailey Shara, the solenoids were replaced by one LEGO Mindstorms motor. In combination with a laser-cut acrylic panel and 3M dual lock tape, an apparatus was built that has enough force to push elevator buttons while sticking to the elevator terminal as required. Unfortunately, iterating through hardware took longer than anticipated, so some features had to be dropped in order to save time. This is discussed in the following section.
 
 ## Dropped Features
-- Instead of three magicians (elevator riders), only two are interacting with this version of the magic elevator. This saved time that would have otherwise been spent developing a voting mechanism and a more sophisticated, probably confusing, training mode
+- Instead of three elevator riders, only two are interacting with this version of the magic elevator. This saved time that would have otherwise been spent developing a voting mechanism and a more sophisticated, probably confusing, training mode
 - The interaction inside the elevator has been dropped for simplicity reasons. Pressing up to four buttons inside the elevator would have required more motors and/or gears and a larger LEGO platform. It would have expanded the user experience, but because it was dropped, time was saved and no new machine learning element had to be added. 
 
 ## Ethical Considerations
