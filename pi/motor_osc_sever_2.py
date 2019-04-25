@@ -33,7 +33,7 @@ class MotorController:
     def call_up(self, signal_name, data):
         self.num_ups = self.num_ups + 1
 
-        if should_call_elevator('up'):
+        if (self.should_call_elevator('up') == True):
             target = self.press_up
             BP.set_motor_position(BP.PORT_A, target)    # set motor A's target position to the current position of motor D
             print("Pressed UP: Motor A target: %6d  Motor A position: %6d" % (target, BP.get_motor_encoder(BP.PORT_A)))
@@ -43,7 +43,7 @@ class MotorController:
     def call_down(self, signal_name, data):
         self.num_downs = self.num_downs + 1
 
-        if should_call_elevator('down'):
+        if (self.should_call_elevator('down') == True):
             target = self.press_down
             BP.set_motor_position(BP.PORT_A, target)    # set motor A's target position to the current position of motor D
             print("Pressed DOWN: Motor A target: %6d  Motor A position: %6d" % (target, BP.get_motor_encoder(BP.PORT_A)))
