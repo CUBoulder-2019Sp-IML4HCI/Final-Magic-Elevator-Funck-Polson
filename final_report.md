@@ -16,13 +16,19 @@ Magicians are free to train a new wand motion or set a new incantation for their
 Our mission is to provide a Harry Potter–like elevator experience. The interaction with the input device, a wand, results in a magically activated elevator terminal pressesing the buttons to call the elevator. The user experience is designed to be seamless and intuitive—magic.
 
 
-## Description of Final User Experience
+## Description of User Experience
 The user experience can best be described with the following figure:
 
 ![UserStoryFinal](https://user-images.githubusercontent.com/46902147/56617879-3e11a680-65de-11e9-84a1-052fa412968c.png)
 **_TODO: update figure based on final UX_**
 
-In this final version of the magic elevator, two elevator riders will take the role of magicians. First, the magicians go through a training mode. The UI asks each magician to train her or his own spell to summon the elevator up or down—the spells that summon the elevator are a combination of wand gestures and corresponding voice incantations. After the training has ended, it is time to put the magicans to the test. Both magicians have to agree on the direction in which they want the elevator to go. Accordingly, both magicians cast the spells they recordied earlier. Only two agreeing, properly executed spells will call the elevator. If there is only one magician present, they can simply call the elevator at will by casting their up or down spell.
+In this final version of the magic elevator, two elevator riders will take the role of magicians. First, the magicians go through a training mode. The user interface (UI) asks each magician to train her or his own spell to summon the elevator up or down—the spells that summon the elevator are a combination of wand gestures and corresponding voice incantations. After the training has ended, it is time to put the magicans to the test. Both magicians have to agree on the direction in which they want the elevator to go. Accordingly, both magicians cast the spells they recordied earlier. Only two agreeing, properly executed spells will call the elevator. If there is only one magician present, they can simply call the elevator at will by casting their up or down spell.
+
+## Description of User Interface
+While users of this system mainly interact just with their wands and the elevator, there is a UI on a computer through which they can train their wand motions, change their associated incantations, and see feedback from various system components. The UI is pictured below.
+
+**_TODO: image of all software running, then describe it_**
+
 
 ## Features
 Listed explicitly, the final features of this project are the abilities to:
