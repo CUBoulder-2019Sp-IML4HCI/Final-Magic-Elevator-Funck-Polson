@@ -27,7 +27,8 @@ In this final version of the Magic Elevator, two elevator riders will take the r
 ## Description of User Interface
 While users of this system mainly interact just with their wands and the elevator, there is a UI on a computer through which they can train their wand motions, change their associated incantations, and see feedback from various system components. The UI is pictured below.
 
-**_TODO: image of all software running, then describe it_**
+![UserInterface](https://user-images.githubusercontent.com/14846863/56772668-3128ba80-6778-11e9-8ff1-6ec7387deacc.png)
+**_TODO: crop/label pic, then describe it_**
 
 
 ## Features
