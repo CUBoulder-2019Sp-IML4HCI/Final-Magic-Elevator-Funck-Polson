@@ -19,8 +19,8 @@ Our mission is to provide a Harry Potter–like elevator experience. The interac
 ## Description of User Experience
 The user experience can best be described with the following figure:
 
-![UserStoryGithub](https://user-images.githubusercontent.com/46902147/56765714-ebaec200-6764-11e9-83e5-b4153312b32d.png)
-**_TODO: update figure based on final UX_**
+![UserStoryGithub](https://user-images.githubusercontent.com/46902147/56765798-20227e00-6765-11e9-979d-04eb72f43116.png)
+
 
 In this final version of the magic elevator, two elevator riders will take the role of magicians. First, the magicians go through a training mode. The user interface (UI) asks each magician to train her or his own spell to summon the elevator up or down—the spells that summon the elevator are a combination of wand gestures and corresponding voice incantations. After the training has ended, it is time to put the magicans to the test. Both magicians have to agree on the direction in which they want the elevator to go. Accordingly, both magicians cast the spells they recordied earlier. Only two agreeing, properly executed spells will call the elevator. If there is only one magician present, they can simply call the elevator at will by casting their up or down spell.
 
