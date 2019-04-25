@@ -30,10 +30,16 @@
  - Max built a linear actuator out of LEGO parts that is finally powerful enough to press elevator buttons
  - Both Shawn and Max recorded this progress update video: https://youtu.be/d8HVFMx6nRo
  
- ## [0.0.6] – 2019-04-16
+## [0.0.6] – 2019-04-16
 ### Added
  - Shawn added a Python script that controls Wekinator with voice commands. Specifically, it can control starting/stopping running and recording DTW examples. He also wrote a different script that walks the user through training an "up" gesture without the need for voice commands.
  - Max designed and laser cut acrylic sheets for our hardware. Further iterations of the hardware to avoid "pushing itself off the wall" have been made. Gears have been modified to activate both buttons with one motor.
  - Both Shawn and Max received the BrickPi3 and set it up.
  - Shawn got the previous software working with the new LEGO hardware (including Zerotier, VNC connection and LEGO motor activation).
  - Both Shawn and Max recorded this progress update video: https://youtu.be/z2Na-lmQrTQ
+ 
+ ## [0.0.7] – 2019-04-25
+### Added
+ - Shawn finished the wand motion training/incantation changing user interface (making it look and feel very much like Harry Potter)
+ - Max wrote the first draft of the final project proposal
+ - Both Max and Shawn revised the final project proposal
