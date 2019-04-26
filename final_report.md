@@ -30,7 +30,16 @@ In the final version of the Magic Elevator, two elevator riders can take the rol
 While users of this system mainly interact just with their wands and the elevator, there is a UI on a computer through which they can train their wand motions, change their associated incantations, and see feedback from various system components. The UI is pictured below.
 
 ![UserInterface](https://user-images.githubusercontent.com/14846863/56779108-adca9180-6796-11e9-9332-b05396f1e6eb.png)
-**_TODO: crop/label pic, then describe it_**
+
+The window highlighted in blue on the top right is the main UI through which wand motions are trained and incantations are set. The incantations in the picture are "floors above" and "floors below," meaning if someone wanted to, say, ride the elevator up, they would perform their "up" wand motion and at the same time say "floors above." Clicking either "Change Incantation" button will prompt the user to speak a new incantation for that direction. Clicking either "Train Wand" button will trigger a series of animations during which Professor Flitwick will explain to the user that they are about to train a new wand motion before having them perform their new motion ten times in a row—enough examples for the dynamic time warping model in Wekinator (top left, highlighted in orange) to learn it.
+
+Wekinator, highlighted in orange, is free, open-source software for real-time, interactive machine learning. The Magic Elevator system uses a dynamic time warping model in Wekinator to classify up and down wand motions from the wand data, shown in the lower left corner. The model analyzes the wand data with a sliding window of roughly one and a half seconds and outputs the degree of match for each window (the three horizontal bars). A wand motion is classified as an up or down spell when the degree of match passes a set threshold, causing both the green circle for that motion to light up and an OSC message with the classification to be sent to the Raspberry Pi. The down motion was just classified in the picture.
+
+The wand data, highlighted in yellow, are X, Y, and Z acceleration readings from the Micro:bit in the wand. The data streams in at approximately 200 readings per second.
+
+The two scripts highlighted in green next to the wand data are the magic behind the incantations. The top script translates spoken words into text via a Python library that leverages Google's speech-to-text API. Once text has been produced from speech, the script checks if either in
+
+
 
 
 ## Features
