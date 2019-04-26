@@ -1,33 +1,34 @@
 # The Magic Elevator: Controlling an Elevator with Wand Spellcasting 
-Max Funck, Shawn Polson
+Maximilian Funck, Shawn Polson
 
+CSCI 5880 Machine Learning for Human-Computer Interfaces
 University of Colorado, Boulder
 
 ![MagicElevatorTitleImg](https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Ftimedotcom.files.wordpress.com%2F2015%2F11%2Fharry-potter-and-the-deathly-hallows-part-i_10d0b26f.jpg)
 _Harry Potter and the Deathly Hallows Part 1 (Warner Bros.)_
 
 ## The Idea
-Elevators are both a blessing and a curse. They enable heavy equipment to be transported across levels and they are often the only means by which people with mobility impairments can move up and down in a building, but waiting for them in an awkward silence is anything but exciting. The Magic Elevator solves this problem: riders become witches/wizards, summoning their elevator through magic spells. Only a correctly executed spell calls the elevator! 
+Elevators are both a blessing and a curse. They enable heavy equipment to be transported across levels and they are often the only means by which people with mobility impairments can move up and down in a building. However, waiting for them in an awkward silence is anything but exciting. The Magic Elevator solves this problem: riders become witches and wizards, summoning their elevator through magic spells. Only a correctly executed spell calls the elevator! 
 
-This report describes a minimum viable product (MVP) prototype of a system that accomplishes this idea. The prototype was built by Max Funck and Shawn Polson as part of their Machine Learning for Human-Computer Interaction course (CSCI/ATLS 4889/5880) at CU Boulder. Witches/wizards wield magic wands that are plastic toy Harry Potter wands whose insides were gutted and replaced with a Micro:bit that senses X, Y, and Z acceleration. They perform wand motions with voice incantations that together call the elevator either up or down. They come up with and train the motions and incantations themselves through the Magic Elevator's user interface (UI). When spells are correctly cast, a button-pushing mechanism built almost entirely out of LEGO parts (and a Raspberry Pi) that is mounted over the elevator buttons summons the elevator in the appropriate direction.
+This report describes a minimum viable product (MVP) prototype of a system that accomplishes this idea. The prototype was built by Maximilian Funck and Shawn Polson as part of their Machine Learning for Human-Computer Interaction course (CSCI/ATLS 4889/5880) at CU Boulder. Witches/wizards wield magic wands that are plastic toy Harry Potter wands whose insides were gutted and replaced with a Micro:bit that senses X, Y, and Z acceleration. They perform wand motions with voice incantations that together call the elevator either up or down. The withches/wizards come up with and train the motions and incantations themselves through the Magic Elevator's user interface (UI). When spells are correctly cast, a button-pushing mechanism built almost entirely out of LEGO parts (and a Raspberry Pi 3) that is mounted over the elevator buttons summons the elevator in the appropriate direction.
 
-Witches/wizards are free to train a new wand motion or set a new incantation for their spells at any time; Professor Flitwick walks them through it in the UI. When two are present, they must work together to cast agreeing spells to call the elevator in one direction. It's a game; only sufficiently skilled witches/wizards may enter the Magic Elevator! When only one is present, she/he can simply call the elevator at will.
+Witches/wizards are free to train a new wand motion or set a new incantation for their spells at any time; Professor Flitwick walks them through it in the UI. When two are present, they must work together to cast agreeing spells to call the elevator in one direction. It's a game; only sufficiently skilled witches/wizards may enter the Magic Elevator! When only one is present, she/he can simply call the elevator in single player mode.
 
 
 ## Mission Statement
-Our mission is to provide a Harry Potter–like elevator experience with technology. The interaction with the input device, a wand, results in a magically-activated elevator terminal pressing the buttons to call the elevator. The user experience is designed to be seamless and intuitive—magic.
+Our mission is to provide a Harry Potter–like elevator experience with machine learning technology. The interaction with the input device, a wand, results in a magically-activated elevator terminal pressing the buttons to call the elevator. The user experience is designed to be seamless and intuitive, just like magic.
 
 
 ## Description of User Experience
-The user experience can best be described with the following cartoon figure:
+The user experience can best be described with the following cartoon user story:
 
 ![UserStoryGithub](https://user-images.githubusercontent.com/46902147/56765798-20227e00-6765-11e9-979d-04eb72f43116.png)
 
 
-In the final version of the Magic Elevator, two elevator riders can play the roles of witches/wizards. First, they go through a training mode (the third panel). The UI asks each witch/wizard to train her or his own spell to summon the elevator up or down; the spells are a combination of wand motions and corresponding voice incantations. After the training has ended, it is time to put them to the test. Both witches/wizards have to agree on the direction in which they want the elevator to go. Accordingly, they both cast the spells they recordied earlier (fourth panel). Only two agreeing, properly executed spells will call the elevator (fifth panel). If there is only one witch/wizard present, they can simply call the elevator at will by casting their up or down spell (last panel).
+In the final version of the Magic Elevator, two elevator riders can play the roles of witches/wizards. First, they go through a training mode (the third panel). The UI asks each witch/wizard to train her or his own spell to summon the elevator up or down; the spells are a combination of wand motions and corresponding voice incantations. After the training has ended, it is time to put them to the test. Both witches/wizards have to agree on the direction in which they want the elevator to go. Accordingly, they both cast the spells they recorded earlier (fourth panel). Only two agreeing, properly executed spells will call the elevator (fifth panel). If there is only one witch/wizard present, they can simply call the elevator at will by casting their up or down spell (last panel).
 
 ## Description of User Interface
-While users of this system mainly interact just with their wands and the elevator, there is a UI on a computer through which they can train their wand motions, change their associated incantations, and see feedback from various system components. The UI is pictured below.
+While users of this system mainly interact just with their wands and the elevator, there is an UI on a computer through which they can train their wand motions, change their associated incantations, and see feedback from various system components. The UI is pictured below.
 
 ![UserInterface](https://user-images.githubusercontent.com/14846863/56779108-adca9180-6796-11e9-9332-b05396f1e6eb.png)
 
