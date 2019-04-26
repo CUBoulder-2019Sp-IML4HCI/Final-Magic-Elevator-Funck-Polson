@@ -68,6 +68,7 @@ After two failed iterations of solenoids which were too weak to press the button
 
 ![MagicElevatorHardware](https://user-images.githubusercontent.com/46902147/56620131-170aa300-65e5-11e9-92e9-9dce94901ad8.jpg)
 _Figure 5: Magice Elevator hardware mounted to the elevator terminal_
+**_TODO: update picture with everything connected_**
 
 ### Software Design:
 A number of hardware pieces are communicating with each other (two microbits per wand, a Macbook, a Raspberry Pi, a LEGO Mindstorms motor). It was a challenge to decide which software is running on which hardware piece, and how communication is established seamlessly and wirelessly between them. In the end, OSC messages facilitate the communication. It was also challenging to 1) tune the parameters for dynamic time warping models for optimal gesture classification, 2) incorporate voice incantations along with the wand gestures, and 3) consistently identify voice incantations in noisy environments. 
