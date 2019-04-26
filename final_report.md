@@ -22,7 +22,7 @@ Our mission is to provide a Harry Potter–like elevator experience with machine
 ## Description of User Experience
 The user experience can best be described with the following cartoon user story in Figure 2:
 
-![UserStoryGithub](https://user-images.githubusercontent.com/46902147/56765798-20227e00-6765-11e9-979d-04eb72f43116.png)
+![UserStoryGithub](https://user-images.githubusercontent.com/46902147/56765798-20227e00-6765-11e9-979d-04eb72f43116.png)  
 _Figure 2: User story of the Magice Elevator (own illustration)_
 
 In the final version of the Magic Elevator, two elevator riders can play the roles of witches/wizards. First, they go through a training mode (the third panel). The UI asks each witch/wizard to train her or his own spell to summon the elevator up or down; the spells are a combination of wand motions and corresponding voice incantations. After the training has ended, it is time to put them to the test. Both witches/wizards have to agree on the direction in which they want the elevator to go. Accordingly, they both cast the spells they recorded earlier (fourth panel). Only two agreeing, properly executed spells will call the elevator (fifth panel). If there is only one witch/wizard present, they can simply call the elevator at will by casting their up or down spell (last panel).
@@ -67,7 +67,7 @@ _Figure 4: First iteration of Magic Elevator hardware_
 After two failed iterations of solenoids which were too weak to press the buttons, we switched to a LEGO Mindstorms motor that was finally strong enough to push the buttons. At the same time, however, the increased power of the pushing mechanism was trying to push the whole apparatus off the wall before pushing the buttons. 3M Dual Lock proved sufficiant to stick the apparatus to the elevator terminal. In order to limit shear forces, the design of the LEGO components was made as light as possible. With a smart arrangement of gears and belts, the foward and backward rotational movement of one motor is now driving two linear actuators to press the up and down buttons independantly. A picture of the final assembly is shown below.
 
 ![MagicElevatorHardware](https://user-images.githubusercontent.com/46902147/56620131-170aa300-65e5-11e9-92e9-9dce94901ad8.jpg)
-**_TODO: update picture with everything properly connected_**
+_Figure 5: Magice Elevator hardware mounted to the elevator terminal_
 
 ### Software Design:
 A number of hardware pieces are communicating with each other (two microbits per wand, a Macbook, a Raspberry Pi, a LEGO Mindstorms motor). It was a challenge to decide which software is running on which hardware piece, and how communication is established seamlessly and wirelessly between them. In the end, OSC messages facilitate the communication. It was also challenging to 1) tune the parameters for dynamic time warping models for optimal gesture classification, 2) incorporate voice incantations along with the wand gestures, and 3) consistently identify voice incantations in noisy environments. 
@@ -124,6 +124,7 @@ The Raspberry Pi and BrickPi were combined with the LEGO hardware and the elevat
 The system architecture is depicted in the following scheme:
 
 ![SystemArchitecture](https://user-images.githubusercontent.com/46902147/56823440-16eeeb00-6811-11e9-8fc0-9a917a242d1d.png)
+_Figure 6: System Architecture (own illustration)_
 
 Two user interactions are the inputs for the Magic Elevator system: a wand gesture and a voice command. The wand gesture consists of acceleration data in the x, y, and z axes from micro:bits sitting inside the wands. The acceleration data is sent wirelessly to another micro:bit plugged into the USB port of the MacBook. The Python script `wand_to_osc.py` packs the acceleration data into OSC messages which are then sent to Wekinator. Wekinator is set up with the model type "dynamic time warping" (DTW) and listens for three inputs (x, y, z), outputting 3 gesture classifications (up, down, and no gesture). The training and run mode of Wekinator are controlled via OSC messages coming from the UI. The OSC message for an elevator up or down signal is sent to the Raspberry Pi only if the trained gesture is performed with sufficient accuracy. 
 
