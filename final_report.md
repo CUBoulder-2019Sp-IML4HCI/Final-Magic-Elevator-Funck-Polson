@@ -29,7 +29,7 @@ In the final version of the Magic Elevator, two elevator riders can take the rol
 ## Description of User Interface
 While users of this system mainly interact just with their wands and the elevator, there is a UI on a computer through which they can train their wand motions, change their associated incantations, and see feedback from various system components. The UI is pictured below.
 
-![UserInterface](https://user-images.githubusercontent.com/14846863/56772668-3128ba80-6778-11e9-8ff1-6ec7387deacc.png)
+![UserInterface](https://user-images.githubusercontent.com/14846863/56779108-adca9180-6796-11e9-9332-b05396f1e6eb.png)
 **_TODO: crop/label pic, then describe it_**
 
 
