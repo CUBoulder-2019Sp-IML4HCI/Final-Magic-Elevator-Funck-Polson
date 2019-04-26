@@ -42,8 +42,6 @@ The two scripts highlighted in green next to the wand data are the magic behind 
 Lastly, the code running on the Raspberry Pi is highlighted in pink in the lower right corner. It runs on the Raspberry Pi to directly control the LEGO motor that presses the elevator buttons. It is visible because the Raspberry Pi's desktop is streamed over Wi-Fi to the main computer through a program called VNC Viewer. The script on the right turns the motor clockwise or counterclockwise to predetermined positions in order to extend the linear actuators that physically press the elevator buttons. Commands to turn the motor are only sent from the script on the left when wand motions are correctly performed with incantations. This means that if a user, say, does the wand motion for up but does not also speak the proper incantation, nothing will happen. The same goes for when two users are present; they must both correctly perform agreeing spells for the elevator to be called.
 
 
-
-
 ## Features
 Listed explicitly, the final features of this project are the abilities to:
  - Call an elevator up or down with magic spells consisting of wand motions and voice incantations
