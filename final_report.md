@@ -1,11 +1,11 @@
 # The Magic Elevator: Controlling an Elevator with Wand Spellcasting 
 Maximilian Funck, Shawn Polson
 
-CSCI 5880 Machine Learning for Human-Computer Interfaces
+CSCI 5880 Machine Learning for Human-Computer Interfaces  
 University of Colorado, Boulder
 
 ![MagicElevatorTitleImg](https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Ftimedotcom.files.wordpress.com%2F2015%2F11%2Fharry-potter-and-the-deathly-hallows-part-i_10d0b26f.jpg)
-_Harry Potter and the Deathly Hallows Part 1 (Warner Bros.)_
+_Figure 1: Harry Potter and the Deathly Hallows Part 1 (Warner Bros.)_
 
 ## The Idea
 Elevators are both a blessing and a curse. They enable heavy equipment to be transported across levels and they are often the only means by which people with mobility impairments can move up and down in a building. However, waiting for them in an awkward silence is anything but exciting. The Magic Elevator solves this problem: riders become witches and wizards, summoning their elevator through magic spells. Only a correctly executed spell calls the elevator! 
@@ -20,17 +20,18 @@ Our mission is to provide a Harry Potter–like elevator experience with machine
 
 
 ## Description of User Experience
-The user experience can best be described with the following cartoon user story:
+The user experience can best be described with the following cartoon user story in Figure 2:
 
 ![UserStoryGithub](https://user-images.githubusercontent.com/46902147/56765798-20227e00-6765-11e9-979d-04eb72f43116.png)
-
+_Figure 2: User story of the Magice Elevator (own illustration)_
 
 In the final version of the Magic Elevator, two elevator riders can play the roles of witches/wizards. First, they go through a training mode (the third panel). The UI asks each witch/wizard to train her or his own spell to summon the elevator up or down; the spells are a combination of wand motions and corresponding voice incantations. After the training has ended, it is time to put them to the test. Both witches/wizards have to agree on the direction in which they want the elevator to go. Accordingly, they both cast the spells they recorded earlier (fourth panel). Only two agreeing, properly executed spells will call the elevator (fifth panel). If there is only one witch/wizard present, they can simply call the elevator at will by casting their up or down spell (last panel).
 
 ## Description of User Interface
-While users of this system mainly interact just with their wands and the elevator, there is an UI on a computer through which they can train their wand motions, change their associated incantations, and see feedback from various system components. The UI is pictured below.
+While users of this system mainly interact just with their wands and the elevator, there is an UI on a computer through which they can train their wand motions, change their associated incantations, and see feedback from various system components. The UI is pictured below in Figure 3.
 
 ![UserInterface](https://user-images.githubusercontent.com/14846863/56779108-adca9180-6796-11e9-9332-b05396f1e6eb.png)
+_Figure 3: Screenshot of User Interface and running terminal shells (own illustration)_
 
 The main UI in the top right corner is where wand motions are trained and incantations are set. The incantations in the picture are "floors above" and "floors below," meaning if someone wanted to, say, ride the elevator up, they would perform their "up" wand motion and at the same time say "floors above." Clicking either "Change Incantation" button will prompt the user to speak a new incantation for that direction. Clicking either "Train Wand" button will trigger a series of animations during which Professor Flitwick explains to the user that they are about to train a new wand motion before having them perform their new motion ten times in a row. The number ten was empirically chosen because it was the minimum number of examples that consistently resulted in well-performing Wekinator models. 
 
@@ -57,8 +58,12 @@ The encountered challenges can be summarized as legal, hardware, and software ch
 Since the elevator is university property and part of the infrastructure in ATLAS, permission to work on the elevator had to be granted for this project. Thanks to the help of professor Ben Shapiro, the relevant authorities from facility management approved the Magic Elevator project. During the project, Program Manager of Facility Management Operations Terry Swindell was updated about the status of the program and field tests conducted at the elevator. 
 
 ### Hardware Design:
-The requirements of the hardware design came directly from contact with facility management: Any engagement with the elevator had to be “hack free,” non-destructive, and immediately removable in case of malfunction. The greatest challenge resulting from these restrictions turned out to be physically pressing the elevator buttons with an apparatus (the only remaining option to call the elevator). 
-It feels counterinuitive to design a wall-mounted machine strong enough to push itself off the wall before overcoming the spring-loaded elevator buttons. But this was exactly what happened in the Magic Elevator project. After two failed iterations of solenoids which were too weak to press the buttons, we switched to a LEGO Mindstorms motor that was finally strong enough to push the buttons. At the same time, however, the increased power of the pushing mechanism was trying to push the whole apparatus off the wall before pushing the buttons. 3M Dual Lock proved sufficiant to stick the apparatus to the elevator terminal. In order to limit shear forces, the design of the LEGO components was made as light as possible. With a smart arrangement of gears and belts, the foward and backward rotational movement of one motor is driving two linear actuators to press the up and down buttons independantly. A picture of the final assembly is shown below.
+The requirements of the hardware design came directly from contact with facility management: Any engagement with the elevator had to be “hack free”, non-destructive, and immediately removable in case of malfunction. The greatest challenge resulting from these restrictions turned out to be physically pressing the elevator buttons with an apparatus (the only remaining option to call the elevator). The elevator buttons are spring loaded - a machine to activate the elevator must (1) be strong enough to overcome the spring force of the buttons and (2) have the appropriate attachment to the elevator panel in order to not push itself off the wall. 
+
+
+
+
+After two failed iterations of solenoids which were too weak to press the buttons, we switched to a LEGO Mindstorms motor that was finally strong enough to push the buttons. At the same time, however, the increased power of the pushing mechanism was trying to push the whole apparatus off the wall before pushing the buttons. 3M Dual Lock proved sufficiant to stick the apparatus to the elevator terminal. In order to limit shear forces, the design of the LEGO components was made as light as possible. With a smart arrangement of gears and belts, the foward and backward rotational movement of one motor is driving two linear actuators to press the up and down buttons independantly. A picture of the final assembly is shown below.
 
 
 ![MagicElevatorHardware](https://user-images.githubusercontent.com/46902147/56620131-170aa300-65e5-11e9-92e9-9dce94901ad8.jpg)
@@ -110,7 +115,7 @@ The technologies used in this project are listed below.
 - argparse
 - sys
 - time
-- brickpi3
+- BrickPi3
 
 The Raspberry Pi and BrickPi were combined with the LEGO hardware and the elevator mount to create the button-pushing apparatus, pictured earlier in this document. The Micro:bits contain accelerometers that provide the data for wand gestures and were combined with store-bought Harry Potter wands (really, just their plastic casings) to create the magic wands. The MacBook runs all the software not on the Raspberry Pi (including Wekinator which does the Dynamic Time Warping) and its microphone (or, optionally, the microphone of headphones plugged into the MacBook) listens for voice incantations. Micro:bit .HEX code is required for the Micro:bits, and both Processing and Python had to be used because while Processing proved to be the most useful language for the project overall, certain aspects like voice recognition and controlling the LEGO motor were only possible in Python. 
 
@@ -118,7 +123,7 @@ The Raspberry Pi and BrickPi were combined with the LEGO hardware and the elevat
 
 The system architecture is depicted in the following scheme:
 
-![MagicElevatorLogic](https://user-images.githubusercontent.com/46902147/56692799-387c9500-66a0-11e9-8687-307bd76d8758.png)
+![SystemArchitecture](https://user-images.githubusercontent.com/46902147/56823440-16eeeb00-6811-11e9-8fc0-9a917a242d1d.png)
 
 Two user interactions are the inputs for the Magic Elevator system: a wand gesture and a voice command. The wand gesture consists of acceleration data in the x, y, and z axes from Micro:bits sitting inside the wands. The acceleration data is sent wirelessly to another Micro:bit plugged into the USB port of the MacBook. The Python script `wand_to_osc.py` packs the acceleration data into OSC messages which are then sent to Wekinator. Wekinator is set up with the model type "Dynamic Time Warping" (DTW) and listens for three inputs (x, y, z), outputting 3 gesture classifications (up, down, and no gesture). The training and run mode of Wekinator are controlled via OSC messages coming from the UI. The OSC message for an elevator up or down signal is sent to the Raspberry Pi only if the trained gesture is performed with sufficient accuracy. 
 
