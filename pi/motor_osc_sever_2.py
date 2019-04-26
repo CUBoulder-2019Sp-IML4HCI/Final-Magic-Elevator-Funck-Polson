@@ -32,6 +32,7 @@ class MotorController:
 
     def call_up(self, signal_name, data):
         self.num_ups = self.num_ups + 1
+        self.num_downs = 0
 
         if (self.should_call_elevator('up') == True):
             target = self.press_up
@@ -42,6 +43,7 @@ class MotorController:
             
     def call_down(self, signal_name, data):
         self.num_downs = self.num_downs + 1
+        self.num_ups = 0
 
         if (self.should_call_elevator('down') == True):
             target = self.press_down
@@ -108,5 +110,4 @@ if __name__ == "__main__":
         
     print("Serving on {}".format(server.server_address))
     server.serve_forever()
-
 
