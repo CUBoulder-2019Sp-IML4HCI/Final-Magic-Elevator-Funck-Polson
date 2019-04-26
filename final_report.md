@@ -139,7 +139,7 @@ The Magic Elevator projet came with a manageable amount of ethical questions. Fi
 **_TODO: We learned xyz. It worked (this) well. Future improvements could be xyz._**
 
 ## Bibliography
-**_TODO: Websites we referenced, e.g., how to do speech-to-text in Python, how to set up Zerotier and VNC with Raspberry Pi, how to flash and install a BrickPi 3 image, Processing documentation for draw() setup() methods, controlling Wekinator via OSC, controlling a LEGO motor**
+**_TODO: Websites we referenced, e.g., how to do speech-to-text in Python, how to set up Zerotier and VNC with Raspberry Pi, how to flash and install a BrickPi 3 image, Processing documentation for draw() setup() methods, controlling Wekinator via OSC, controlling a LEGO motor_**
 
 
 
