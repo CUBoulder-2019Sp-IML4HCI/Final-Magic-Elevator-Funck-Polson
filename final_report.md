@@ -110,9 +110,9 @@ The technologies used in this project are listed below.
 
 The Raspberry Pi and BrickPi were combined with the LEGO hardware and the elevator mount to create the button-pushing apparatus, pictured earlier in this document. The Micro:bits contain accelerometers that provide the data for wand gestures and were combined with store-bought Harry Potter wands (really, just their plastic casings) to create the magic wands. The MacBook runs all the software not on the Raspberry Pi (including Wekinator which does the Dynamic Time Warping) and its microphone (or, optionally, the microphone of headphones plugged into the MacBook) listens for voice incantations. Micro:bit .HEX code is required for the Micro:bits, and both Processing and Python had to be used because while Processing proved to be the most useful language for the project overall, certain aspects like voice recognition and controlling the LEGO motor were only possible in Python. 
 
-## Model Architecture
+## System Architecture
 
-The model architecture is depicted in the following scheme:
+The system architecture is depicted in the following scheme:
 
 ![MagicElevatorLogic](https://user-images.githubusercontent.com/46902147/56692799-387c9500-66a0-11e9-8687-307bd76d8758.png)
 
