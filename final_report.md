@@ -155,7 +155,10 @@ Last but not least, we would like to thank our professor, Ben Shapiro, PhD stude
  - http://www.wekinator.org/
  - http://www.wekinator.org/detailed-instructions/#Controlling_Wekinator_via_OSC_messages
  - https://github.com/fiebrink1/wekinator
+ - https://kadenze.com/courses/machine-learning-for-musicians-and-artists-v/sessions/working-with-time
+ - https://makecode.microbit.org/
  - https://realpython.com/python-speech-recognition/
+ - https://pypi.org/project/python-osc/
  - https://iamkelv.in/blog/2017/06/zerotier.html
  - https://learn.sparkfun.com/tutorials/how-to-use-remote-desktop-on-the-raspberry-pi-with-vnc/all
  - https://www.dexterindustries.com/brickpi3-tutorials-documentation/
@@ -163,4 +166,5 @@ Last but not least, we would like to thank our professor, Ben Shapiro, PhD stude
  - https://www.lego.com/en-us/mindstorms/learn-to-program
  - https://github.com/DexterInd/BrickPi3
  - https://processing.org/examples/setupdraw.html
+ - https://processing.org/examples/button.html
  
