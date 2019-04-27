@@ -68,20 +68,17 @@ _Figure 4: First iteration of the Magic Elevator hardware_
 After two failed iterations of solenoids which were too weak to press the buttons, we switched to a LEGO Mindstorms motor that was finally strong enough to push the buttons. At the same time, the increased power of the pushing mechanism was trying to push the whole apparatus off the wall before pushing the buttons. 3M Dual Lock proved sufficiant to stick the apparatus to the elevator terminal. In order to limit shear forces, the design of the LEGO components was made as light as possible. With a smart arrangement of gears and belts, the foward and backward rotational movement of one motor is now driving two linear actuators to press the up and down buttons independantly. A picture of the final assembly is shown below.
 
 ![MagicElevatorHardware](https://user-images.githubusercontent.com/46902147/56620131-170aa300-65e5-11e9-92e9-9dce94901ad8.jpg)
-_Figure 5: Magice Elevator hardware mounted to the elevator terminal_
+_Figure 5: Magic Elevator hardware mounted to the elevator terminal_
 **_TODO: update picture with everything connected_**
 
 ### Software Design:
-A number of hardware pieces are communicating with each other (two micro:bits per wand, a Macbook, a Raspberry Pi, a LEGO Mindstorms motor). It was a challenge to decide which software is running on which hardware piece, and how communication is established seamlessly and wirelessly between them. In the end, OSC messages facilitate the communication. It was also challenging to 1) tune the parameters for dynamic time warping models for optimal gesture classification, 2) incorporate voice incantations along with the wand gestures, and 3) consistently identify voice incantations in noisy environments. 
+A number of hardware pieces are communicating with each other (two micro:bits per wand, a MacBook, a Raspberry Pi, and a LEGO Mindstorms motor). It was a challenge to decide which software is running on which hardware piece, and how communication is established seamlessly and wirelessly between them. In the end, OSC messages over Wi-Fi facilitate the communication. It was also challenging to 1) tune the parameters for dynamic time warping models for optimal gesture classification, 2) incorporate voice incantations along with the wand gestures, and 3) consistently identify incantations in noisy environments. 
 
 Dynamic time warping models have parameters for maximum downsampling length of examples, minimum length used for matches, and two others called "match width" and "match hop size." The first two were both set to 30 because it was empirically determined to be the largest number before the MacBook would run out of memory and become jittery. And keeping the minimum length used for matches the same as the maximum downsampling length prevented the beginnings of one wand gesture from being falsely classified as the other. 
 
-Incorporating voice incantations with wand gestures forced the addition of three new scripts to the Magic Elevator system. They are the scripts labeled "transcribe incantations," "change incantations," and "receive spells" in the user interface picture from earlier in the report. They had to be added to interperet voices, to change incantations during runtime, and to check for matches between gestures and incantations before activating the motor, respectively.
+Incorporating incantations with wand gestures forced the addition of three new scripts to the Magic Elevator system. They are the scripts labeled "transcribe incantations," "change incantations," and "receive spells" in Figure 3. They had to be added to interperet voices, to change incantations during runtime, and to check for matches between gestures and incantations before activating the motor, respectively.
 
 Identifying incantations relies on Google's speech-to-text API. Anyone who has dictated to a virtual assistant like Google Assistant or Siri is likely aware of how finicky those transcriptions can be. Especially in noisy environments, this script is prone to problems like interpretting "floors above" as "where's the love." There is no real workaround to this problem. It can be improved by using headphones that reduce ambient noise, but that breaks the illusion of magic and so is undesirable. 
-
-
-
 
 
 ## Built-in Technologies
