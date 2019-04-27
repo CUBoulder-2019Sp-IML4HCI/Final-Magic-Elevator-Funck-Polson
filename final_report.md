@@ -23,7 +23,7 @@ Our mission is to provide a Harry Potter–like elevator experience with machine
 The user experience can best be described with the following cartoon user story in Figure 2:
 
 ![UserStoryGithub](https://user-images.githubusercontent.com/46902147/56765798-20227e00-6765-11e9-979d-04eb72f43116.png)  
-_Figure 2: User story of the Magice Elevator (own illustration)_
+_Figure 2: User story of the Magic Elevator (illustration)_
 
 In the final version of the Magic Elevator, two elevator riders can play the roles of witches/wizards. First, they go through a training mode (the third panel). The UI asks each witch/wizard to train her or his own spell to summon the elevator up or down; the spells are a combination of wand motions and corresponding voice incantations. After the training has ended, it is time to put them to the test. Both witches/wizards have to agree on the direction in which they want the elevator to go. Accordingly, they both cast the spells they recorded earlier (fourth panel). Only two agreeing, properly executed spells will call the elevator (fifth panel). If there is only one witch/wizard present, they can simply call the elevator at will by casting their up or down spell (last panel).
 
