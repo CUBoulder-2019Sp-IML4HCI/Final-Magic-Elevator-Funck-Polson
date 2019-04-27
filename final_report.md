@@ -160,8 +160,7 @@ Last but not least, we would like to thank our professor, Ben Shapiro, PhD stude
  - https://learn.sparkfun.com/tutorials/how-to-use-remote-desktop-on-the-raspberry-pi-with-vnc/all
  - https://www.dexterindustries.com/brickpi3-tutorials-documentation/
  - https://www.dexterindustries.com/howto/install-raspbian-for-robots-image-on-an-sd-card/
+ - https://www.lego.com/en-us/mindstorms/learn-to-program
+ - https://github.com/DexterInd/BrickPi3
+ - https://processing.org/examples/setupdraw.html
  
- 
-**_TODO: Websites we referenced, e.g., Processing documentation for draw() setup() methods, controlling a LEGO motor_**
-
-
