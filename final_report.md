@@ -152,6 +152,16 @@ Last but not least, we would like to thank our professor, Ben Shapiro, PhD stude
 
 
 ## Bibliography
-**_TODO: Websites we referenced, e.g., how to do speech-to-text in Python, how to set up Zerotier and VNC with Raspberry Pi, how to flash and install a BrickPi 3 image, Processing documentation for draw() setup() methods, controlling Wekinator via OSC, controlling a LEGO motor_**
+ - http://www.wekinator.org/
+ - http://www.wekinator.org/detailed-instructions/#Controlling_Wekinator_via_OSC_messages
+ - https://github.com/fiebrink1/wekinator
+ - https://realpython.com/python-speech-recognition/
+ - https://iamkelv.in/blog/2017/06/zerotier.html
+ - https://learn.sparkfun.com/tutorials/how-to-use-remote-desktop-on-the-raspberry-pi-with-vnc/all
+ - https://www.dexterindustries.com/brickpi3-tutorials-documentation/
+ - https://www.dexterindustries.com/howto/install-raspbian-for-robots-image-on-an-sd-card/
+ 
+ 
+**_TODO: Websites we referenced, e.g., Processing documentation for draw() setup() methods, controlling a LEGO motor_**
 
 
