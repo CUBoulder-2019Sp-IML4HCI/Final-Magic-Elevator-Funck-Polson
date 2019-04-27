@@ -20,7 +20,7 @@ Our mission is to provide a Harry Potter–like elevator experience with machine
 
 
 ## Description of User Experience
-The user experience can best be described with the following cartoon user story in Figure 2:
+The user experience can best be described with the following cartoon user story:
 
 ![UserStoryGithub](https://user-images.githubusercontent.com/46902147/56765798-20227e00-6765-11e9-979d-04eb72f43116.png)  
 _Figure 2: User story of the Magic Elevator (illustration)_
