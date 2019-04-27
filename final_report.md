@@ -28,16 +28,16 @@ _Figure 2: User story of the Magic Elevator (illustration)_
 In the final version of the Magic Elevator, two elevator riders play the roles of witches/wizards. First, they go through a training mode (the third panel). The UI asks each witch/wizard to train her or his own spell to summon the elevator up or down; the spells are a combination of wand motions and corresponding voice incantations. After the training has ended, it is time to put them to the test. Both witches/wizards have to agree on the direction in which they want the elevator to go. Accordingly, they both cast the spells they recorded earlier (fourth panel). Only two agreeing, properly executed spells will call the elevator (fifth panel). If there is only one witch/wizard present, they can simply call the elevator at will by casting their up or down spell (last panel).
 
 ## Description of User Interface
-While users of this system mainly interact just with their wands and the elevator, there is an UI on a computer through which they can train their wand motions, change their associated incantations, and see feedback from various system components. The UI is pictured below in Figure 3.
+While users of this system mainly interact just with their wands and the elevator, there is a UI on a computer through which they can train their wand motions, change their associated incantations, and see feedback from various system components. The UI is pictured below in Figure 3.
 
 ![UserInterface](https://user-images.githubusercontent.com/14846863/56779108-adca9180-6796-11e9-9332-b05396f1e6eb.png)
-_Figure 3: Screenshot of User Interface and running terminal shells (own illustration)_
+_Figure 3: Screenshot of user interface and running support scripts_
 
 The main UI in the top right corner is where wand motions are trained and incantations are set. The incantations in the picture are "floors above" and "floors below," meaning if someone wanted to, say, ride the elevator up, they would perform their "up" wand motion and at the same time say "floors above." Clicking either "Change Incantation" button will prompt the user to speak a new incantation for that direction. Clicking either "Train Wand" button will trigger a series of animations during which Professor Flitwick explains to the user that they are about to train a new wand motion before having them perform their new motion ten times in a row. The number ten was empirically chosen because it was the minimum number of examples that consistently resulted in well-performing Wekinator models. 
 
-Wekinator, labeled "Classify wand motions", is free, open-source software for real-time, interactive machine learning. The Magic Elevator system uses a dynamic time warping model in Wekinator to classify up and down wand motions from the wand data shown in the lower left corner. The model analyzes the wand data with a sliding window of roughly one and a half seconds and outputs the degree of match for each class (the three horizontal bars). A wand motion is classified as an up or down spell when the degree of match passes a set threshold, causing an OSC message with the classification to be sent to the Raspberry Pi. The down motion was just classified in the picture.
+Wekinator, labeled "Classify wand motions," is free, open-source software for real-time, interactive machine learning. The Magic Elevator system uses a dynamic time warping model in Wekinator to classify up and down wand motions from the wand data shown in the lower left corner. The model analyzes the wand data with a sliding window of roughly one and a half seconds and outputs the degree of match for each class (the three horizontal bars). A wand motion is classified as an up or down spell when the degree of match passes a set threshold, causing an OSC message with the classification to be sent to the Raspberry Pi. The down motion was just classified in the picture.
 
-The wand data are X, Y, and Z acceleration readings from the Micro:bit in the wand. The data streams in at approximately 200 readings per second.
+The wand data are X, Y, and Z acceleration readings from the micro:bit in the wand. The data streams in at approximately 200 readings per second.
 
 The two scripts highlighted in green next to the wand data are the magic behind the incantations. The top script translates spoken words into text via a Python library that leverages Google's speech-to-text API. The script then checks that transcribed text for up or down incantations by comparing it against two files (`up.txt` and `down.txt`) that store the incantations set in the main UI. If an incantation is found in the transcribed text, a corresponding OSC message is sent to the Raspberry Pi. The bottom script activates when either "Change Incantation" button is pressed in the main UI, as it overwrites the phrases in `up.txt` or `down.txt`. This allows for incantations to be changed during runtime without having to restart the transcription script. 
 
@@ -71,7 +71,7 @@ _Figure 5: Magice Elevator hardware mounted to the elevator terminal_
 **_TODO: update picture with everything connected_**
 
 ### Software Design:
-A number of hardware pieces are communicating with each other (two microbits per wand, a Macbook, a Raspberry Pi, a LEGO Mindstorms motor). It was a challenge to decide which software is running on which hardware piece, and how communication is established seamlessly and wirelessly between them. In the end, OSC messages facilitate the communication. It was also challenging to 1) tune the parameters for dynamic time warping models for optimal gesture classification, 2) incorporate voice incantations along with the wand gestures, and 3) consistently identify voice incantations in noisy environments. 
+A number of hardware pieces are communicating with each other (two micro:bits per wand, a Macbook, a Raspberry Pi, a LEGO Mindstorms motor). It was a challenge to decide which software is running on which hardware piece, and how communication is established seamlessly and wirelessly between them. In the end, OSC messages facilitate the communication. It was also challenging to 1) tune the parameters for dynamic time warping models for optimal gesture classification, 2) incorporate voice incantations along with the wand gestures, and 3) consistently identify voice incantations in noisy environments. 
 
 Dynamic time warping models have parameters for maximum downsampling length of examples, minimum length used for matches, and two others called "match width" and "match hop size." The first two were both set to 30 because it was empirically determined to be the largest number before the MacBook would run out of memory and become jittery. And keeping the minimum length used for matches the same as the maximum downsampling length prevented the beginnings of one wand gesture from being falsely classified as the other. 
 
@@ -90,7 +90,7 @@ The technologies used in this project are listed below.
 - Raspberry Pi 3
 - BrickPi 3
 - LEGO Mindstorms Motor + Miscellaneous LEGOs
-- Micro:bits
+- micro:bits
 - Elevator Mount
 - Harry Potter Wands
 - MacBook (with its built-in microphone)
@@ -102,7 +102,7 @@ The technologies used in this project are listed below.
 #### Languages:
 - Processing
 - Python 3
-- Micro:bit .HEX code
+- micro:bit .HEX code
 
 #### Processing Libraries:
 - oscP5
