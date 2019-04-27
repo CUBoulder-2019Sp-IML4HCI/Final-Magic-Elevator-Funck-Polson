@@ -63,7 +63,6 @@ In the first iteration, a 3D-printed case held a Raspberry Pi and two electric s
 
 ![SolenoidIteration](https://user-images.githubusercontent.com/46902147/56854968-59d9bd00-68fc-11e9-9a6c-6a34c0a055ad.png)
 _Figure 4: First iteration of the Magic Elevator hardware_
-**_TODO: Put "Pi" inside the box and add spaces between "top view" and "bottom view"_**
 
 After two failed iterations of solenoids which were too weak to press the buttons, we switched to a LEGO Mindstorms motor that was finally strong enough to push the buttons. At the same time, the increased power of the pushing mechanism was trying to push the whole apparatus off the wall before pushing the buttons. 3M Dual Lock proved sufficient to stick the apparatus to the elevator terminal. In order to limit shear forces, the design of the LEGO components was made as light as possible. With a smart arrangement of gears and belts, the forward and backward rotational movement of one motor is now driving two linear actuators to press the up and down buttons independently. A picture of the final assembly is shown below.
 
