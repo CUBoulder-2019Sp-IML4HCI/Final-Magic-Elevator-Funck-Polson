@@ -38,8 +38,14 @@
  - Shawn got the previous software working with the new LEGO hardware (including Zerotier, VNC connection and LEGO motor activation).
  - Both Shawn and Max recorded this progress update video: https://youtu.be/z2Na-lmQrTQ
  
- ## [0.0.7] – 2019-04-25
+## [0.0.7] – 2019-04-25
 ### Added
  - Shawn finished the wand motion training/incantation changing user interface (making it look and feel very much like Harry Potter)
- - Max wrote the first draft of the final project proposal
- - Both Max and Shawn revised the final project proposal
+ - Max wrote the first draft of the final project report
+ - Both Max and Shawn revised the final project report
+ 
+## [0.1.0] – 2019-04-27
+### Added
+ - Both Max and Shawn finished the final project report (`final_report.md` in this repo)
+ - Both Max and Shawn finished the final project presentation (`final_presentation.pptx` in this repo)
+ - Both Max and Shawn finished the final project video: TBD
