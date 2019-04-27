@@ -61,7 +61,7 @@ Since the elevator is university property and part of the infrastructure in ATLA
 The requirements of the hardware design came directly from contact with facility management: Any engagement with the elevator had to be “hack free”, non-destructive, and immediately removable in case of malfunction. The greatest challenge resulting from these restrictions turned out to be physically pressing the elevator buttons with an apparatus (the only remaining option to call the elevator). The elevator buttons are spring loaded—a machine to activate the elevator must 1) be strong enough to overcome the spring force of the buttons and 2) be appropriately attached to the elevator panel in order to not push itself off the wall.  
 In the first iteration, a 3D-printed case held a Raspberry Pi and two electric solenoids. This first iteration can be seen in Figure 4.
 
-![SolenoidIteration](https://user-images.githubusercontent.com/46902147/56825034-46075b80-6815-11e9-8d95-3731d1b0709a.png)
+![SolenoidIteration](https://user-images.githubusercontent.com/46902147/56854949-05ced880-68fc-11e9-8bd2-86f447e8e754.png)
 _Figure 4: First iteration of the Magic Elevator hardware_
 **_TODO: Put "Pi" inside the box and add spaces between "top view" and "bottom view"_**
 
