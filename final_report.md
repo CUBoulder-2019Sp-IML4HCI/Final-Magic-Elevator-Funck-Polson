@@ -66,7 +66,7 @@ _Figure 4: First iteration of the Magic Elevator hardware_
 
 After two failed iterations of solenoids which were too weak to press the buttons, we switched to a LEGO Mindstorms motor that was finally strong enough to push the buttons. At the same time, the increased power of the pushing mechanism was trying to push the whole apparatus off the wall before pushing the buttons. 3M Dual Lock proved sufficient to stick the apparatus to the elevator terminal. In order to limit shear forces, the design of the LEGO components was made as light as possible. With a smart arrangement of gears and belts, the forward and backward rotational movement of one motor is now driving two linear actuators to press the up and down buttons independently. A picture of the final assembly is shown below.
 
-![MagicElevatorHardware](https://user-images.githubusercontent.com/14846863/56859841-a3062d00-694d-11e9-990b-86103f62bf09.png)
+![HardwareDetail](https://user-images.githubusercontent.com/46902147/56911324-ec4b9f00-6a69-11e9-9782-040f9df6feaf.png)
 _Figure 5: Magic Elevator hardware mounted to the elevator terminal_
 
 ### Software Design:
