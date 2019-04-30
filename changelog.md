@@ -47,5 +47,5 @@
 ## [0.1.0] – 2019-04-27
 ### Added
  - Both Max and Shawn finished the final project report (`final_report.md` in this repo)
- - Both Max and Shawn finished the final project presentation (`final_presentation.pptx` in this repo)
+ - Both Max and Shawn finished the final project presentation (`final_presentation.txt` in this repo)
  - Both Max and Shawn finished the final project video: TBD
