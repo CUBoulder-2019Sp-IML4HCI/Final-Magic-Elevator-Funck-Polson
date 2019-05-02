@@ -5,7 +5,9 @@
  - Shawn Polson
  
 ## Video Demo
+[![Magic Elevator Demo Video](https://user-images.githubusercontent.com/14846863/57108134-18c41d00-6cef-11e9-9650-c58e91006778.jpg)](https://www.youtube.com/watch?v=wKQm7nsb_Ok)
 https://www.youtube.com/watch?v=wKQm7nsb_Ok
+
 
 ## The Idea
 Elevators are both a blessing and a curse. They enable heavy equipment to be transported across levels, and they are often the only means by which people with mobility impairments can move up and down in a building. However, waiting for them in an awkward silence is anything but exciting. The Magic Elevator solves this problem: riders become witches and wizards, summoning their elevator through magic spells. Only a correctly executed spell calls the elevator!
