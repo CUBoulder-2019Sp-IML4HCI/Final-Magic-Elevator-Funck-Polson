@@ -51,7 +51,7 @@ This program is [`pi/callelevator/callelevator.pde`](https://github.com/CUBoulde
 This script is either [`pi/motor_osc_server.py`](https://github.com/CUBoulder-2019Sp-IML4HCI/Final-Magic-Elevator-Funck-Polson/tree/master/pi) or [`pi/motor_osc_server_2.py`](https://github.com/CUBoulder-2019Sp-IML4HCI/Final-Magic-Elevator-Funck-Polson/tree/master/pi) in this repo. Running the former will put the Magic Elevator system in single-player mode, while the latter will put it in two-player mode. The difference is that in two-player mode, only two spells cast properly in agreement will call the elevator. When either script is running, it receives OSC messages from `callelevator.pde` that tell it to move the LEGO motor to press either the up or down elevator button.
 
 ### Building the Hardware
-<img src="https://user-images.githubusercontent.com/14846863/57103067-0d1e2980-6ce2-11e9-8049-d4707d75fbc0.PNG" width="400" title="Wand"></img>
+<img src="https://user-images.githubusercontent.com/14846863/57108237-5759d780-6cef-11e9-82b4-d9cfac3aa789.PNG" width="400" title="Wand"></img>
 ![SolenoidIteration](https://user-images.githubusercontent.com/46902147/56854968-59d9bd00-68fc-11e9-9a6c-6a34c0a055ad.png)
 ![HardwareDetail](https://user-images.githubusercontent.com/46902147/56911665-a8a56500-6a6a-11e9-80de-c8a03416ab04.png)
  
