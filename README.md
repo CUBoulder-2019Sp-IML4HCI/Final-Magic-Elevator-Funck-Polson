@@ -53,9 +53,16 @@ This script is either [`pi/motor_osc_server.py`](https://github.com/CUBoulder-20
 ### Building the Hardware
 
 The hardware of the Magic Elevator consists of an Input Device (Magic Wand) and an Output device (Elevator Control Terminal).  
-The Magic Wand uses a [`Toy Wand'](https://www.amazon.com/Harry-Potter-Potters-Wizard-Training/dp/B01N29ENXW/ref=sr_1_3?keywords=harry+potter+wand&qid=1556837733&s=gateway&sr=8-3) as a case 
+The Magic Wand uses a [Toy Wand](https://www.amazon.com/Harry-Potter-Potters-Wizard-Training/dp/B01N29ENXW/ref=sr_1_3?keywords=harry+potter+wand&qid=1556837733&s=gateway&sr=8-3) as a case. The interior is taken out and replaced by a [micro:bit](https://www.amazon.com/BBC-BBC2546862-Micro-bit-go/dp/B01G8X7VM2/ref=sr_1_3?keywords=microbit&qid=1556837891&s=gateway&sr=8-3) - the battery of the micro:bit is stored in the handle of the wand. The wand assembly can be seen in the picture below. 
 
 <img src="https://user-images.githubusercontent.com/14846863/57108237-5759d780-6cef-11e9-82b4-d9cfac3aa789.PNG" width="400" title="Wand"></img>
+
+The Elevator Control Terminal is responsible for physically pressing the elevator buttons. All hardware is mounted to a lasercut acrylic sheet, shown in the picture below and available in this repo under [`ElevatorAcrylicSheet.sldprt`](https://github.com/CUBoulder-2019Sp-IML4HCI/Final-Magic-Elevator-Funck-Polson/blob/master/ElevatorAcrylicSheet.sldprt). 
+![Bildschirmfoto 2019-05-02 um 4 51 45 PM](https://user-images.githubusercontent.com/46902147/57112208-4368a280-6cfc-11e9-9dce-231ff657809e.png)
+
+
+
+
 ![SolenoidIteration](https://user-images.githubusercontent.com/46902147/56854968-59d9bd00-68fc-11e9-9a6c-6a34c0a055ad.png)
 ![HardwareDetail](https://user-images.githubusercontent.com/46902147/56911665-a8a56500-6a6a-11e9-80de-c8a03416ab04.png)
  
