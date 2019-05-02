@@ -24,8 +24,12 @@ Our mission is to provide a Harry Potter–like elevator experience with machine
 This repo contains all the software needed to recreate the Magic Elevator. The hardware—wands and the mechanical button pusher—were custom-built, and recreating them isn't trivial. But here we include details for building all aspects of our system. 
 
 ### Building the Software
+![UserInterface](https://user-images.githubusercontent.com/14846863/56779108-adca9180-6796-11e9-9332-b05396f1e6eb.png)
 
 ### Building the Hardware
+![wands](https://user-images.githubusercontent.com/14846863/57103067-0d1e2980-6ce2-11e9-8049-d4707d75fbc0.PNG?v=1&s=100)
+![SolenoidIteration](https://user-images.githubusercontent.com/46902147/56854968-59d9bd00-68fc-11e9-9a6c-6a34c0a055ad.png)
+![HardwareDetail](https://user-images.githubusercontent.com/46902147/56911665-a8a56500-6a6a-11e9-80de-c8a03416ab04.png)
  
 ## Final Report
 [`final_report.md`](https://github.com/CUBoulder-2019Sp-IML4HCI/Final-Magic-Elevator-Funck-Polson/blob/master/final_report.md) in this repo.
