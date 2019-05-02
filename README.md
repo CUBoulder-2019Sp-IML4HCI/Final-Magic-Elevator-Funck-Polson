@@ -28,6 +28,7 @@ This repo contains all the software needed to recreate the Magic Elevator. The h
 
 All the software is shown in the picture above. Here's how to use/build each component.
 #### Main UI
+The program labeled "Main UI" in the picture above is [`Flitwick_Spell_Training/Flitwick_Spell_Training.pde`](https://github.com/CUBoulder-2019Sp-IML4HCI/Final-Magic-Elevator-Funck-Polson/blob/master/Flitwick_Spell_Training/Flitwick_Spell_Training.pde) in this repo. It's a self-contained Processing program that will run once you have installed the libraries it imports. It relies on three system fonts that we put in [`Flitwick_Spell_Training/data/`](https://github.com/CUBoulder-2019Sp-IML4HCI/Final-Magic-Elevator-Funck-Polson/tree/master/Flitwick_Spell_Training/data): `4PrivetDrive-Regular.otf`, `HARRP___.TTF`, and `LumosLatino.ttf`.
 
 #### Wand data
 
