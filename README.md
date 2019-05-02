@@ -26,6 +26,21 @@ This repo contains all the software needed to recreate the Magic Elevator. The h
 ### Building the Software
 ![UserInterface](https://user-images.githubusercontent.com/14846863/56779108-adca9180-6796-11e9-9332-b05396f1e6eb.png)
 
+All the software is shown in the picture above. Here's how to use/build each component.
+#### Main UI
+
+#### Wand data
+
+#### Classify wand motions
+
+#### Transcribe incantations
+
+#### Change incantations
+
+#### Receive spells
+
+#### LEGO motor control
+
 ### Building the Hardware
 <img src="https://user-images.githubusercontent.com/14846863/57103067-0d1e2980-6ce2-11e9-8049-d4707d75fbc0.PNG" width="400" title="Wand"></img>
 ![SolenoidIteration](https://user-images.githubusercontent.com/46902147/56854968-59d9bd00-68fc-11e9-9a6c-6a34c0a055ad.png)
