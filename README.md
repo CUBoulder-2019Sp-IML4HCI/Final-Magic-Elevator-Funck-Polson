@@ -28,5 +28,4 @@ This repo contains all the software needed to recreate the Magic Elevator. The h
 ### Building the Hardware
  
 ## Final Report
-![`final_report.md`](https://github.com/CUBoulder-2019Sp-IML4HCI/Final-Magic-Elevator-Funck-Polson/blob/master/final_report.md) in this repo.
-
+[`final_report.md`](https://github.com/CUBoulder-2019Sp-IML4HCI/Final-Magic-Elevator-Funck-Polson/blob/master/final_report.md) in this repo.
