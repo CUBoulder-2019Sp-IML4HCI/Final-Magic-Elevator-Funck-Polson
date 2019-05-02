@@ -57,13 +57,15 @@ The Magic Wand uses a [Toy Wand](https://www.amazon.com/Harry-Potter-Potters-Wiz
 
 <img src="https://user-images.githubusercontent.com/14846863/57108237-5759d780-6cef-11e9-82b4-d9cfac3aa789.PNG" width="400" title="Wand"></img>
 
-The Elevator Control Terminal is responsible for physically pressing the elevator buttons. All hardware is mounted to a lasercut acrylic sheet, shown in the picture below and available in this repo under [`ElevatorAcrylicSheet.sldprt`](https://github.com/CUBoulder-2019Sp-IML4HCI/Final-Magic-Elevator-Funck-Polson/blob/master/ElevatorAcrylicSheet.sldprt). 
-![Bildschirmfoto 2019-05-02 um 4 51 45 PM](https://user-images.githubusercontent.com/46902147/57112208-4368a280-6cfc-11e9-9dce-231ff657809e.png)
+The Elevator Control Terminal is responsible for physically pressing the elevator buttons. All hardware is mounted to a lasercut acrylic sheet, shown in the picture below and available in this repo under [`ElevatorAcrylicSheet.sldprt`](https://github.com/CUBoulder-2019Sp-IML4HCI/Final-Magic-Elevator-Funck-Polson/blob/master/ElevatorAcrylicSheet.sldprt). In the final assembly, [3M Dual Lock tape](https://www.amazon.com/3M-Dual-Lock-Reclosable-Fastener/dp/B007OXK330/ref=sr_1_1_sspa?keywords=3m+dual+lock&qid=1556838467&s=gateway&sr=8-1-spons&psc=1) attaches the Control Terminal to the elevator panel.
+![Bildschirmfoto 2019-05-02 um 4 51 45 PM](https://user-images.githubusercontent.com/46902147/57112208-4368a280-6cfc-11e9-9dce-231ff657809e.png)  
 
+Onto the acrylic sheet, a LEGO assembly is built. Since many different versions of elevator panels exist, we will forgoe a detailed construction manual. However, two critical LEGO components have proven to be suitable for the assembly. First, the LEGO MINDSTORMS Interactive Motor (9842) and second, two LEGO TECHNIC mini linear actuators (92693). Working with gears an belts, the clockwise and counterclockwise rotational movement of the Motor can be transformed to extend the two linear actuators in opposing directions. The two mentioned critical LEGO components are shown in the picture below.
 
+![LEGO](https://user-images.githubusercontent.com/46902147/57112560-ce966800-6cfd-11e9-9994-8441402ade01.png)
 
+In addition, the acrylic sheet holds the mentioned Raspberry Pi 3 and BrickPi3 shield. A 12 Volt battery pack can be included to drive the Raspberry Pi, BrickPi and LEGO motor. However, this load does drain the battery pack quickly - a 12 Volt wall plug has been proven as the more stable option. The final assembly of the Elevator Control Terminal is shown in the picture below.
 
-![SolenoidIteration](https://user-images.githubusercontent.com/46902147/56854968-59d9bd00-68fc-11e9-9a6c-6a34c0a055ad.png)
 ![HardwareDetail](https://user-images.githubusercontent.com/46902147/56911665-a8a56500-6a6a-11e9-80de-c8a03416ab04.png)
  
 ## Final Report
