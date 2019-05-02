@@ -21,7 +21,7 @@ Our mission is to provide a Harry Potter–like elevator experience with machine
 ![UserStoryGithub](https://user-images.githubusercontent.com/46902147/56765798-20227e00-6765-11e9-979d-04eb72f43116.png)  
 
 ## Building the Project
-This repo contains all the software needed to recreate the Magic Elevator. The hardware—wands and the mechanical button pusher—were custom-built, and recreating them isn't trivial. But here we include details for building all aspects of our system. 
+This repo contains all the software needed to recreate the Magic Elevator. The hardware, wands and the mechanical button pusher, were custom-built and recreating them isn't trivial. But here we include details for building all aspects of our system. 
 
 ### Building the Software
 ![UserInterface](https://user-images.githubusercontent.com/14846863/56779108-adca9180-6796-11e9-9332-b05396f1e6eb.png)
