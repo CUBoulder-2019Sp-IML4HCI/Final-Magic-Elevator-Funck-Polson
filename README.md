@@ -52,8 +52,7 @@ This script is either [`pi/motor_osc_server.py`](https://github.com/CUBoulder-20
 
 ### Building the Hardware
 
-The hardware of the Magic Elevator consists of an input device, a magic wand, and an output device, the mechanical button pusher.  
-The magic wand uses a [toy wand](https://www.amazon.com/Harry-Potter-Potters-Wizard-Training/dp/B01N29ENXW/ref=sr_1_3?keywords=harry+potter+wand&qid=1556837733&s=gateway&sr=8-3) as a case. The interior is taken out and replaced by a [micro:bit](https://www.amazon.com/BBC-BBC2546862-Micro-bit-go/dp/B01G8X7VM2/ref=sr_1_3?keywords=microbit&qid=1556837891&s=gateway&sr=8-3)—the battery of the micro:bit is stored in the handle of the wand. The wand assembly can be seen in the picture below. 
+The hardware of the Magic Elevator consists of an input device—a magic wand—and an output device—the mechanical button pusher. The magic wand uses a [toy wand](https://www.amazon.com/Harry-Potter-Potters-Wizard-Training/dp/B01N29ENXW/ref=sr_1_3?keywords=harry+potter+wand&qid=1556837733&s=gateway&sr=8-3) as a case. The interior is taken out and replaced by a [micro:bit](https://www.amazon.com/BBC-BBC2546862-Micro-bit-go/dp/B01G8X7VM2/ref=sr_1_3?keywords=microbit&qid=1556837891&s=gateway&sr=8-3)—the battery of the micro:bit is stored in the handle of the wand. The wand assembly can be seen in the picture below. 
 
 <img src="https://user-images.githubusercontent.com/14846863/57108237-5759d780-6cef-11e9-82b4-d9cfac3aa789.PNG" width="400" title="Wand"></img>
 
