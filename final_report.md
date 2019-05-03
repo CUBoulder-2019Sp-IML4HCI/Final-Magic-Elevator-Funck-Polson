@@ -14,7 +14,7 @@ This report describes a minimum viable product (MVP) prototype of a system that 
 
 Witches/wizards are free to train a new wand motion or set a new incantation for their spells at any time; Professor Flitwick walks them through it in the UI. When two users are present, they must work together to cast agreeing spells to call the elevator in one direction. It's a game; only sufficiently skilled witches/wizards may enter the Magic Elevator! When only one is present, she or he can just call the elevator in single-player mode.
 
-See a video demo at this link: https://www.youtube.com/watch?v=wKQm7nsb_Ok
+See a video demo at this link: https://youtu.be/PoPb2fAdgJ8
 
 
 ## Mission Statement
