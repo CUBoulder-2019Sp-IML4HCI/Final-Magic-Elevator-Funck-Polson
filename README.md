@@ -5,8 +5,8 @@
  - Shawn Polson
  
 ## Video Demo
-[![Magic Elevator Demo Video](https://user-images.githubusercontent.com/14846863/57108134-18c41d00-6cef-11e9-9650-c58e91006778.jpg)](https://youtu.be/PoPb2fAdgJ8)
-https://youtu.be/PoPb2fAdgJ8
+[![Magic Elevator Demo Video](https://user-images.githubusercontent.com/14846863/57108134-18c41d00-6cef-11e9-9650-c58e91006778.jpg)](https://youtu.be/7YAXbNsBY5Q)
+https://youtu.be/7YAXbNsBY5Q
 
 
 ## The Idea
