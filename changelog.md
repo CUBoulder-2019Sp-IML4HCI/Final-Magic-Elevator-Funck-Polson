@@ -48,4 +48,4 @@
 ### Added
  - Both Max and Shawn finished the final project report (`final_report.md` in this repo)
  - Both Max and Shawn finished the final project presentation (`final_presentation.txt` in this repo)
- - Both Max and Shawn finished the final project video: https://youtu.be/7YAXbNsBY5Q
+ - Both Max and Shawn finished the final project video: https://youtu.be/wAoRdG36DOk
